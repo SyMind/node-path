@@ -261,7 +261,13 @@ impl Utf8PathBuf {
     /// assert_eq!(path, Utf8PathBuf::from("/etc"));
     /// ```
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
-        self.0.push(&path.as_ref().0)
+        let path = path.as_ref();
+        let path = if self.parent().is_some() && path.is_absolute() {
+            path.strip_prefix("/").unwrap()
+        } else {
+            path
+        };
+        self.0.push(&path.0)
     }
 
     /// Truncates `self` to [`self.parent`].
@@ -1008,7 +1014,13 @@ impl Utf8Path {
     #[inline]
     #[must_use]
     pub fn join(&self, path: impl AsRef<Utf8Path>) -> Utf8PathBuf {
-        Utf8PathBuf(self.0.join(&path.as_ref().0))
+        self._join(path.as_ref())
+    }
+
+    fn _join(&self, path: &Utf8Path) -> Utf8PathBuf {
+        let mut buf = self.to_path_buf();
+        buf.push(path);
+        buf
     }
 
     /// Creates an owned [`PathBuf`] with `path` adjoined to `self`.
@@ -1516,6 +1528,48 @@ impl Utf8Path {
     #[inline]
     unsafe fn assume_utf8_mut(path: &mut Path) -> &mut Utf8Path {
         &mut *(path as *mut Path as *mut Utf8Path)
+    }
+
+    /// Normalize the given path, resolving '..' and '.' segments.
+    ///
+    /// When multiple, sequential path segment separation characters are found (e.g. / on POSIX and either \ or / on Windows), 
+    /// they are replaced by a single instance of the platform-specific path segment separator (/ on POSIX and \ on Windows). 
+    /// Trailing separators are preserved.
+    ///
+    /// If the path is a zero-length string, '.' is returned, representing the current working directory.
+    /// 
+    /// On POSIX, the types of normalization applied by this function do not strictly adhere to the POSIX specification.
+    /// For example, this function will replace two leading forward slashes with a single slash as if it was a regular absolute path,
+    /// whereas a few POSIX systems assign special meaning to paths beginning with exactly two forward slashes.
+    /// Similarly, other substitutions performed by this function, such as removing .. segments,
+    /// may change how the underlying system resolves the path.
+    pub fn normalize(&self) -> Utf8PathBuf {
+        let mut components = self.components().peekable();
+        let mut ret = if let Some(c @ Utf8Component::Prefix(..)) = components.peek() {
+            let buf = PathBuf::from(c.as_os_str());
+            components.next();
+            buf
+        } else {
+            PathBuf::new()
+        };
+
+        for component in components {
+            match component {
+                Utf8Component::Prefix(..) => unreachable!(),
+                Utf8Component::RootDir => {
+                    ret.push(component.as_os_str());
+                }
+                Utf8Component::CurDir => {}
+                Utf8Component::ParentDir => {
+                    ret.pop();
+                }
+                Utf8Component::Normal(c) => {
+                    ret.push(c);
+                }
+            }
+        }
+
+        Utf8PathBuf(ret)
     }
 }
 
