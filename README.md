@@ -1,20 +1,22 @@
-# camino - UTF-8 paths
+# node-path - Node.js-like paths
 
-[![camino on crates.io](https://img.shields.io/crates/v/camino)](https://crates.io/crates/camino)
-[![crates.io download count](https://img.shields.io/crates/d/camino)](https://crates.io/crates/camino)
-[![Documentation (latest release)](https://img.shields.io/badge/docs-latest%20version-brightgreen.svg)](https://docs.rs/camino)
-[![Documentation (main)](https://img.shields.io/badge/docs-main-purple.svg)](https://camino-rs.github.io/camino/rustdoc/camino/)
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE-APACHE)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE-MIT)
 
 This repository contains the source code for `camino`, an extension of the `std::path` module that adds new
 [`Utf8PathBuf`] and [`Utf8Path`] types.
 
-## What is camino?
+## What is node-path?
 
-`camino`'s [`Utf8PathBuf`] and [`Utf8Path`] types are like the standard library's [`PathBuf`] and [`Path`] types, except
+`node-path`'s [`Utf8PathBuf`] and [`Utf8Path`] types are like the standard library's [`PathBuf`] and [`Path`] types, except
 they are guaranteed to only contain UTF-8 encoded data. Therefore, they expose the ability to get their
 contents as strings, they implement `Display`, etc.
+
+1. Ensures UTF-8 data, handling only Unicode paths.
+2. Automatically normalizes paths.
+3. The join and push methods append absolute paths like Node.js, rather than replacing with the provided absolute path.
+4. Implements methods such as resolve, relative, and normalize.
+5. Passes all Node.js path-related tests.
 
 The `std::path` types are not guaranteed to be valid UTF-8. This is the right decision for the standard library,
 since it must be as general as possible. However, on all platforms, non-Unicode paths are vanishingly uncommon for a

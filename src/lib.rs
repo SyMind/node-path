@@ -50,6 +50,7 @@ use std::{
     ops::Deref,
     path::*,
     rc::Rc,
+    str,
     str::FromStr,
     sync::Arc,
 };
@@ -60,6 +61,97 @@ mod proptest_impls;
 mod serde_impls;
 #[cfg(test)]
 mod tests;
+
+fn is_path_separator(byte: &u8) -> bool {
+    *byte == b'/' || *byte == b'\\'
+}
+
+fn is_posix_path_separator(byte: &u8) -> bool {
+    *byte == b'/'
+}
+
+fn is_windows_device_root(byte: &u8) -> bool {
+    (*byte >= b'A' && *byte <= b'Z') || (*byte >= b'a' && *byte <= b'z')
+}
+
+// Resolves . and .. elements in a path with directory names
+fn normalize_string(path: impl AsRef<[u8]>, allow_above_root: bool, separator: u8) -> String {
+    let path = path.as_ref();
+
+    let mut res: Vec<u8> = Vec::with_capacity(path.len());
+    let mut last_segment_length = 0;
+    let mut last_slash = -1;
+    let mut dots = 0;
+    let mut code = &b'\0';
+
+    for (i, ch) in path.iter().enumerate().chain(Some((path.len(), &b'\0'))) {
+        if i < path.len() {
+            code = ch;
+        } else if is_path_separator(code) {
+            break;
+        } else {
+            code = &b'/';
+        }
+
+        if is_path_separator(code) {
+            if last_slash == i as isize - 1 || dots == 1 {
+                // NOOP
+            } else if dots == 2 {
+                if res.len() < 2
+                    || last_segment_length != 2
+                    || &res[res.len() - 2..] != &[b'.', b'.']
+                {
+                    if res.len() > 2 {
+                        if let Some(last_slash_index) = res.iter().rposition(|b| *b == separator) {
+                            res.truncate(last_slash_index);
+                            last_segment_length = res.len()
+                                - res
+                                    .iter()
+                                    .rposition(|b| *b == separator)
+                                    .map(|i| i + 1)
+                                    .unwrap_or(0);
+                        } else {
+                            res.clear();
+                            last_segment_length = 0;
+                        }
+                        last_slash = i as isize;
+                        dots = 0;
+                        continue;
+                    } else if !res.is_empty() {
+                        res.clear();
+                        last_segment_length = 0;
+                        last_slash = i as isize;
+                        dots = 0;
+                        continue;
+                    }
+                }
+                if allow_above_root {
+                    if !res.is_empty() {
+                        res.push(separator);
+                    }
+                    res.extend(&[b'.', b'.']);
+                    last_segment_length = 2;
+                }
+            } else {
+                if !res.is_empty() {
+                    res.push(separator);
+                    res.extend(&path[(last_slash + 1) as usize..i]);
+                } else {
+                    res.extend(&path[(last_slash + 1) as usize..i]);
+                }
+                last_segment_length = (i as isize - last_slash - 1) as usize;
+            }
+            last_slash = i as isize;
+            dots = 0;
+        } else if *code == b'.' && dots != -1 {
+            dots += 1;
+        } else {
+            dots = -1;
+        }
+    }
+
+    unsafe { String::from_utf8_unchecked(res) }
+}
 
 /// An owned, mutable UTF-8 path (akin to [`String`]).
 ///
@@ -261,13 +353,8 @@ impl Utf8PathBuf {
     /// assert_eq!(path, Utf8PathBuf::from("/etc"));
     /// ```
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
-        let path = path.as_ref();
-        let path = if self.parent().is_some() && path.is_absolute() {
-            path.strip_prefix("/").unwrap()
-        } else {
-            path
-        };
-        self.0.push(&path.0)
+        self.0.as_mut_os_string().push(path.as_ref());
+        self.normalize();
     }
 
     /// Truncates `self` to [`self.parent`].
@@ -1532,18 +1619,26 @@ impl Utf8Path {
 
     /// Normalize the given path, resolving '..' and '.' segments.
     ///
-    /// When multiple, sequential path segment separation characters are found (e.g. / on POSIX and either \ or / on Windows), 
-    /// they are replaced by a single instance of the platform-specific path segment separator (/ on POSIX and \ on Windows). 
+    /// When multiple, sequential path segment separation characters are found (e.g. / on POSIX and either \ or / on Windows),
+    /// they are replaced by a single instance of the platform-specific path segment separator (/ on POSIX and \ on Windows).
     /// Trailing separators are preserved.
     ///
     /// If the path is a zero-length string, '.' is returned, representing the current working directory.
-    /// 
+    ///
     /// On POSIX, the types of normalization applied by this function do not strictly adhere to the POSIX specification.
     /// For example, this function will replace two leading forward slashes with a single slash as if it was a regular absolute path,
     /// whereas a few POSIX systems assign special meaning to paths beginning with exactly two forward slashes.
     /// Similarly, other substitutions performed by this function, such as removing .. segments,
     /// may change how the underlying system resolves the path.
     pub fn normalize(&self) -> Utf8PathBuf {
+        if cfg!(windows) {
+            self.normalize_win32()
+        } else {
+            self.normalize_posix()
+        }
+    }
+
+    fn normalize_posix(&self) -> Utf8PathBuf {
         let trailing_separator = self.as_str().ends_with("/");
 
         let mut components = self.components().peekable();
@@ -1563,7 +1658,10 @@ impl Utf8Path {
                 }
                 Utf8Component::CurDir => {}
                 Utf8Component::ParentDir => {
-                    if matches!(ret.components().last(), Some(Utf8Component::Normal(_)) | Some(Utf8Component::RootDir)) {
+                    if matches!(
+                        ret.components().last(),
+                        Some(Utf8Component::Normal(_)) | Some(Utf8Component::RootDir)
+                    ) {
                         ret.pop();
                     } else {
                         ret.push(component.as_str());
@@ -1580,6 +1678,142 @@ impl Utf8Path {
         }
 
         ret
+    }
+
+    fn normalize_win32(&self) -> Utf8PathBuf {
+        let path = self.as_str();
+        if path.is_empty() {
+            return Utf8PathBuf::from(".");
+        }
+
+        let len = path.len();
+
+        let mut root_end = 0;
+        let mut device = None;
+        let mut is_absolute = false;
+        let code = &path.as_bytes()[0];
+
+        // Try to match a root
+        if len == 1 {
+            // `path` contains just a single char, exit early to avoid
+            // unnecessary work
+            if is_posix_path_separator(code) {
+                return Utf8PathBuf::from("\\");
+            }
+        }
+        if is_path_separator(code) {
+            // Possible UNC root
+
+            // If we started with a separator, we know we at least have an absolute
+            // path of some kind (UNC or otherwise)
+            is_absolute = true;
+
+            if path.as_bytes().get(1).is_some_and(is_path_separator) {
+                // Matched double path separator at beginning
+                let mut j = 2;
+                let mut last = j;
+                // Match 1 or more non-path separators
+                while j < len && !is_path_separator(&path.as_bytes()[j]) {
+                    j += 1;
+                }
+                if j < len && j != last {
+                    let first_part = &path[last..j];
+                    // Matched!
+                    last = j;
+                    // Match 1 or more path separators
+                    while j < len && is_path_separator(&path.as_bytes()[j]) {
+                        j += 1;
+                    }
+                    if j < len && j != last {
+                        // Matched!
+                        last = j;
+                        // Match 1 or more non-path separators
+                        while j < len && !is_path_separator(&path.as_bytes()[j]) {
+                            j += 1;
+                        }
+                        if j < len || j != last {
+                            if first_part == "." || first_part == "?" {
+                                // We matched a device root (e.g. \\\\.\\PHYSICALDRIVE0)
+                                device = Some(Cow::from(format!("\\\\{}", first_part)));
+                                root_end = 4;
+                            } else if j == len {
+                                // We matched a UNC root only
+                                // Return the normalized version of the UNC root since there
+                                // is nothing left to process
+                                return Utf8PathBuf::from(format!(
+                                    "\\\\{}\\{}\\",
+                                    first_part,
+                                    &path[last..]
+                                ));
+                            } else {
+                                // We matched a UNC root with leftovers
+                                device = Some(Cow::from(format!(
+                                    "\\\\{}\\{}",
+                                    first_part,
+                                    &path[last..j]
+                                )));
+                                root_end = j;
+                            }
+                        }
+                    }
+                }
+            } else {
+                root_end = 1;
+            }
+        } else if is_windows_device_root(&path.as_bytes()[0])
+            && path.as_bytes().get(1) == Some(&b':')
+        {
+            // Possible device root
+            device = Some(Cow::from(&path[0..2]));
+            root_end = 2;
+            if path.len() > 2 && path.as_bytes().get(2).is_some_and(is_path_separator) {
+                // Treat separator following drive name as an absolute path indicator
+                is_absolute = true;
+                root_end = 3;
+            }
+        }
+
+        let mut tail = if root_end < path.len() {
+            normalize_string(&path[root_end..], !is_absolute, b'\\')
+        } else {
+            String::new()
+        };
+
+        if tail.is_empty() && !is_absolute {
+            tail = ".".to_string();
+        }
+
+        if !tail.is_empty() && path.as_bytes().last().is_some_and(is_path_separator) {
+            tail.push('\\');
+        }
+
+        if !is_absolute && device.is_none() && path.contains(':') {
+            // If the original path was not absolute and if we have not been able to
+            // resolve it relative to a particular device, we need to ensure that the
+            // `tail` has not become something that Windows might interpret as an
+            // absolute path. See CVE-2024-36139.
+            if tail.len() >= 2
+                && is_windows_device_root(&tail.as_bytes()[0])
+                && tail.as_bytes().get(1) == Some(&b':')
+            {
+                return Utf8PathBuf::from(format!(".\\{}", tail));
+            }
+            let mut index = path.find(':');
+            while let Some(i) = index {
+                if i == path.len() - 1 || path.as_bytes().get(i + 1).is_some_and(is_path_separator)
+                {
+                    return Utf8PathBuf::from(format!(".\\{}", tail));
+                }
+                index = path[i + 1..].find(':').map(|next| next + i + 1);
+            }
+        }
+
+        match device {
+            Some(device) if is_absolute => Utf8PathBuf::from(format!("{}\\{}", device, tail)),
+            Some(device) => Utf8PathBuf::from(format!("{}{}", device, tail)),
+            None if is_absolute => Utf8PathBuf::from(format!("\\{}", tail)),
+            _ => Utf8PathBuf::from(tail),
+        }
     }
 }
 
