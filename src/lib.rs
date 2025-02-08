@@ -1544,24 +1544,30 @@ impl Utf8Path {
     /// Similarly, other substitutions performed by this function, such as removing .. segments,
     /// may change how the underlying system resolves the path.
     pub fn normalize(&self) -> Utf8PathBuf {
+        let trailing_separator = self.as_str().ends_with("/");
+
         let mut components = self.components().peekable();
         let mut ret = if let Some(c @ Utf8Component::Prefix(..)) = components.peek() {
-            let buf = PathBuf::from(c.as_os_str());
+            let buf = Utf8PathBuf::from(c.as_str());
             components.next();
             buf
         } else {
-            PathBuf::new()
+            Utf8PathBuf::new()
         };
 
         for component in components {
             match component {
                 Utf8Component::Prefix(..) => unreachable!(),
                 Utf8Component::RootDir => {
-                    ret.push(component.as_os_str());
+                    ret.push(component.as_str());
                 }
                 Utf8Component::CurDir => {}
                 Utf8Component::ParentDir => {
-                    ret.pop();
+                    if matches!(ret.components().last(), Some(Utf8Component::Normal(_)) | Some(Utf8Component::RootDir)) {
+                        ret.pop();
+                    } else {
+                        ret.push(component.as_str());
+                    }
                 }
                 Utf8Component::Normal(c) => {
                     ret.push(c);
@@ -1569,7 +1575,11 @@ impl Utf8Path {
             }
         }
 
-        Utf8PathBuf(ret)
+        if trailing_separator {
+            ret.push("/");
+        }
+
+        ret
     }
 }
 
