@@ -75,7 +75,12 @@ fn is_windows_device_root(byte: &u8) -> bool {
 }
 
 // Resolves . and .. elements in a path with directory names
-fn normalize_string(path: impl AsRef<[u8]>, allow_above_root: bool, separator: u8) -> String {
+fn normalize_string(
+    path: impl AsRef<[u8]>,
+    allow_above_root: bool,
+    separator: u8,
+    is_path_separator: &dyn Fn(&u8) -> bool,
+) -> String {
     let path = path.as_ref();
 
     let mut res: Vec<u8> = Vec::with_capacity(path.len());
@@ -1639,45 +1644,39 @@ impl Utf8Path {
     }
 
     fn normalize_posix(&self) -> Utf8PathBuf {
-        let trailing_separator = self.as_str().ends_with("/");
+        let path = self.as_str().as_bytes();
 
-        let mut components = self.components().peekable();
-        let mut ret = if let Some(c @ Utf8Component::Prefix(..)) = components.peek() {
-            let buf = Utf8PathBuf::from(c.as_str());
-            components.next();
-            buf
-        } else {
-            Utf8PathBuf::new()
-        };
+        if path.is_empty() {
+            return Utf8PathBuf::from(".");
+        }
 
-        for component in components {
-            match component {
-                Utf8Component::Prefix(..) => unreachable!(),
-                Utf8Component::RootDir => {
-                    ret.push(component.as_str());
-                }
-                Utf8Component::CurDir => {}
-                Utf8Component::ParentDir => {
-                    if matches!(
-                        ret.components().last(),
-                        Some(Utf8Component::Normal(_)) | Some(Utf8Component::RootDir)
-                    ) {
-                        ret.pop();
-                    } else {
-                        ret.push(component.as_str());
-                    }
-                }
-                Utf8Component::Normal(c) => {
-                    ret.push(c);
-                }
+        let is_absolute = path.get(0) == Some(&b'/');
+        let trailing_separator = path.last() == Some(&b'/');
+
+        // Normalize the path
+        let mut normalized_path =
+            normalize_string(path, !is_absolute, b'/', &is_posix_path_separator);
+
+        if normalized_path.is_empty() {
+            if is_absolute {
+                return Utf8PathBuf::from("/");
             }
+            return if trailing_separator {
+                Utf8PathBuf::from("./")
+            } else {
+                Utf8PathBuf::from(".")
+            };
         }
 
         if trailing_separator {
-            ret.push("/");
+            normalized_path.push('/');
         }
 
-        ret
+        if is_absolute {
+            Utf8PathBuf::from(format!("/{}", normalized_path))
+        } else {
+            Utf8PathBuf::from(normalized_path)
+        }
     }
 
     fn normalize_win32(&self) -> Utf8PathBuf {
@@ -1774,7 +1773,7 @@ impl Utf8Path {
         }
 
         let mut tail = if root_end < path.len() {
-            normalize_string(&path[root_end..], !is_absolute, b'\\')
+            normalize_string(&path[root_end..], !is_absolute, b'\\', &is_path_separator)
         } else {
             String::new()
         };
