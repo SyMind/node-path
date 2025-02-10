@@ -102,10 +102,7 @@ fn normalize_string(
             if last_slash == i as isize - 1 || dots == 1 {
                 // NOOP
             } else if dots == 2 {
-                if res.len() < 2
-                    || last_segment_length != 2
-                    || &res[res.len() - 2..] != &[b'.', b'.']
-                {
+                if res.len() < 2 || last_segment_length != 2 || &res[res.len() - 2..] != b".." {
                     if res.len() > 2 {
                         if let Some(last_slash_index) = res.iter().rposition(|b| *b == separator) {
                             res.truncate(last_slash_index);
@@ -134,7 +131,7 @@ fn normalize_string(
                     if !res.is_empty() {
                         res.push(separator);
                     }
-                    res.extend(&[b'.', b'.']);
+                    res.extend(b"..");
                     last_segment_length = 2;
                 }
             } else {
@@ -1650,7 +1647,7 @@ impl Utf8Path {
             return Utf8PathBuf::from(".");
         }
 
-        let is_absolute = path.get(0) == Some(&b'/');
+        let is_absolute = path.first() == Some(&b'/');
         let trailing_separator = path.last() == Some(&b'/');
 
         // Normalize the path
@@ -1864,7 +1861,7 @@ impl fmt::Debug for Utf8Path {
 #[repr(transparent)]
 pub struct Utf8Ancestors<'a>(Ancestors<'a>);
 
-impl<'a> fmt::Debug for Utf8Ancestors<'a> {
+impl fmt::Debug for Utf8Ancestors<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Debug::fmt(&self.0, f)
     }
@@ -1883,7 +1880,7 @@ impl<'a> Iterator for Utf8Ancestors<'a> {
     }
 }
 
-impl<'a> FusedIterator for Utf8Ancestors<'a> {}
+impl FusedIterator for Utf8Ancestors<'_> {}
 
 /// An iterator over the [`Utf8Component`]s of a [`Utf8Path`].
 ///
@@ -1943,9 +1940,9 @@ impl<'a> Iterator for Utf8Components<'a> {
     }
 }
 
-impl<'a> FusedIterator for Utf8Components<'a> {}
+impl FusedIterator for Utf8Components<'_> {}
 
-impl<'a> DoubleEndedIterator for Utf8Components<'a> {
+impl DoubleEndedIterator for Utf8Components<'_> {
     #[inline]
     fn next_back(&mut self) -> Option<Self::Item> {
         self.0.next_back().map(|component| {
@@ -1956,7 +1953,7 @@ impl<'a> DoubleEndedIterator for Utf8Components<'a> {
     }
 }
 
-impl<'a> fmt::Debug for Utf8Components<'a> {
+impl fmt::Debug for Utf8Components<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Debug::fmt(&self.0, f)
     }
@@ -2188,13 +2185,13 @@ impl<'a> Utf8Component<'a> {
     }
 }
 
-impl<'a> fmt::Debug for Utf8Component<'a> {
+impl fmt::Debug for Utf8Component<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Debug::fmt(self.as_os_str(), f)
     }
 }
 
-impl<'a> fmt::Display for Utf8Component<'a> {
+impl fmt::Display for Utf8Component<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt(self.as_str(), f)
     }
@@ -2296,7 +2293,7 @@ pub enum Utf8Prefix<'a> {
     Disk(u8),
 }
 
-impl<'a> Utf8Prefix<'a> {
+impl Utf8Prefix<'_> {
     /// Determines if the prefix is verbatim, i.e., begins with `\\?\`.
     ///
     /// # Examples
@@ -2402,13 +2399,13 @@ impl<'a> Utf8PrefixComponent<'a> {
     }
 }
 
-impl<'a> fmt::Debug for Utf8PrefixComponent<'a> {
+impl fmt::Debug for Utf8PrefixComponent<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Debug::fmt(&self.0, f)
     }
 }
 
-impl<'a> fmt::Display for Utf8PrefixComponent<'a> {
+impl fmt::Display for Utf8PrefixComponent<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt(self.as_str(), f)
     }
