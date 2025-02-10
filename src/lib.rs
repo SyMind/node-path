@@ -51,7 +51,7 @@ use std::{
     path::*,
     rc::Rc,
     str::{self, FromStr},
-    sync::Arc,
+    sync::{Arc, OnceLock},
 };
 
 #[cfg(feature = "proptest1")]
@@ -71,6 +71,15 @@ fn is_posix_path_separator(byte: &u8) -> bool {
 
 fn is_windows_device_root(byte: &u8) -> bool {
     (*byte >= b'A' && *byte <= b'Z') || (*byte >= b'a' && *byte <= b'z')
+}
+
+static CACHED_CWD: OnceLock<Utf8PathBuf> = OnceLock::new();
+
+fn process_cwd() -> Cow<'static, Utf8Path> {
+    let cwd = CACHED_CWD.get_or_init(|| {
+        Utf8PathBuf::from_path_buf(std::env::current_dir().unwrap()).unwrap_or_default()
+    });
+    Cow::Borrowed(&cwd)
 }
 
 // Resolves . and .. elements in a path with directory names
@@ -692,6 +701,47 @@ impl Utf8PathBuf {
     #[inline]
     pub fn shrink_to(&mut self, min_capacity: usize) {
         self.0.shrink_to(min_capacity)
+    }
+
+    /// The resolve() method resolves given path into an absolute path.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use camino::{Utf8Path, Utf8PathBuf};
+    ///
+    /// assert_eq!(Utf8Path::new("/foo/bar").resolve("./baz"), Utf8PathBuf::from("/foo/bar/baz"));
+    /// assert_eq!(Utf8Path::new("/foo/bar").resolve("/tmp/file/"), Utf8PathBuf::from("/tmp/file"));
+    /// Utf8Path::new("wwwroot").resolve("static_files/png/"), Utf8PathBuf::from("../gif/image.gif");
+    /// // if the current working directory is /home/myself/node,
+    /// // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+    /// ```
+    pub fn resolve(&self, path: impl AsRef<Utf8Path>) -> Utf8PathBuf {
+        let path = path.as_ref().as_str();
+
+        // Skip empty entries
+        if self.as_str().is_empty() && path.is_empty() {
+            return self.to_path_buf();
+        }
+
+        let mut resolved_path = self.to_path_buf();
+        resolved_path.push(path);
+        let mut resolved_absolute = resolved_path.as_str().starts_with('/');
+
+        if !resolved_absolute {
+            let cwd = process_cwd();
+            resolved_path = Utf8PathBuf::from(format!("{}/{}", cwd.as_str(), resolved_path));
+            resolved_absolute = cwd.is_absolute();
+        }
+
+        // At this point the path should be resolved to a full absolute path, but
+        // handle relative paths to be safe (might happen when process.cwd() fails)
+
+        if resolved_absolute {
+            Utf8PathBuf::from(format!("/{}", resolved_path))
+        } else {
+            resolved_path
+        }
     }
 }
 
