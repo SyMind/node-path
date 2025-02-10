@@ -50,8 +50,7 @@ use std::{
     ops::Deref,
     path::*,
     rc::Rc,
-    str,
-    str::FromStr,
+    str::{self, FromStr},
     sync::Arc,
 };
 
@@ -352,23 +351,125 @@ impl Utf8PathBuf {
     ///
     /// let mut path = Utf8PathBuf::from("/tmp");
     /// path.push("/etc");
-    /// assert_eq!(path, Utf8PathBuf::from("/etc"));
+    /// assert_eq!(path, Utf8PathBuf::from("/tmp/etc"));
     /// ```
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
+        if cfg!(windows) {
+            self.push_win32(path);
+        } else {
+            self.push_posix(path);
+        }
+    }
+
+    fn push_posix(&mut self, path: impl AsRef<Utf8Path>) {
+        let path = path.as_ref().as_str();
+        if path.is_empty() {
+            return;
+        }
+
+        if self.as_str().is_empty() {
+            self.0.push(path);
+            return;
+        }
+
         // in general, a separator is needed if the rightmost byte is not a separator
         let buf = self.0.as_os_str().as_encoded_bytes();
         let need_sep = buf
             .last()
             .map(|c| !is_posix_path_separator(c))
-            .unwrap_or(false);
+            .unwrap_or(false)
+            && path
+                .as_bytes()
+                .first()
+                .map(|c| !is_posix_path_separator(c))
+                .unwrap_or(false);
 
+        let os_string = self.0.as_mut_os_string();
+        if need_sep {
+            os_string.push("/");
+        }
+        os_string.push(path);
+    }
+
+    fn push_win32(&mut self, path: impl AsRef<Utf8Path>) {
         let path = path.as_ref().as_str();
-        if !path.is_empty() {
-            let os_string = self.0.as_mut_os_string();
-            if need_sep {
-                os_string.push("/");
+        if path.is_empty() {
+            return;
+        }
+
+        if self.as_str().is_empty() {
+            self.0.push(path);
+            return;
+        }
+
+        // in general, a separator is needed if the rightmost byte is not a separator
+        let buf = self.0.as_os_str().as_encoded_bytes();
+        let need_sep = buf.last().map(|c| !is_path_separator(c)).unwrap_or(false)
+            && path
+                .as_bytes()
+                .first()
+                .map(|c| !is_path_separator(c))
+                .unwrap_or(false);
+
+        let mut joined = self.to_string();
+        if need_sep {
+            joined.push('\\');
+        }
+        joined.push_str(path);
+
+        let mut first_part = self.as_str().as_bytes();
+        if first_part.is_empty() {
+            first_part = joined.as_bytes();
+        }
+        // Make sure that the joined path doesn't start with two slashes, because
+        // normalize() will mistake it for a UNC path then.
+        //
+        // This step is skipped when it is very clear that the user actually
+        // intended to point at a UNC path. This is assumed when the first
+        // non-empty string arguments starts with exactly two slashes followed by
+        // at least one more non-slash character.
+        //
+        // Note that for normalize() to treat a path as a UNC path it needs to
+        // have at least 2 components, so we don't filter for that here.
+        // This means that the user can use join to construct UNC paths from
+        // a server name and a share name; for example:
+        //   path.join('//server', 'share') -> '\\\\server\\share\\')
+        let mut needs_replace = true;
+        let mut slash_count = 0;
+
+        if is_path_separator(&first_part[0]) {
+            slash_count += 1;
+            if path.len() > 1 && is_path_separator(&first_part[1]) {
+                slash_count += 1;
+                if path.len() > 2 {
+                    if is_path_separator(&first_part[2]) {
+                        slash_count += 1;
+                    } else {
+                        // We matched a UNC path in the first part
+                        needs_replace = false;
+                    }
+                }
             }
-            os_string.push(path);
+        }
+
+        if needs_replace {
+            // Find any more consecutive slashes we need to replace
+            while slash_count < joined.len()
+                && joined
+                    .as_bytes()
+                    .get(slash_count)
+                    .is_some_and(is_path_separator)
+            {
+                slash_count += 1;
+            }
+
+            // Replace the slashes if needed
+            if slash_count >= 2 {
+                let mut res = String::with_capacity(joined.len());
+                res.push('\\');
+                res.push_str(&joined[slash_count..]);
+                self.0 = PathBuf::from(res);
+            }
         }
     }
 
