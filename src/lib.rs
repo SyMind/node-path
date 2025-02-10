@@ -355,17 +355,21 @@ impl Utf8PathBuf {
     /// assert_eq!(path, Utf8PathBuf::from("/etc"));
     /// ```
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
+        // in general, a separator is needed if the rightmost byte is not a separator
+        let buf = self.0.as_os_str().as_encoded_bytes();
+        let need_sep = buf
+            .last()
+            .map(|c| !is_posix_path_separator(c))
+            .unwrap_or(false);
+
         let path = path.as_ref().as_str();
-
-        if path.is_empty() {
-            return;
+        if !path.is_empty() {
+            let os_string = self.0.as_mut_os_string();
+            if need_sep {
+                os_string.push("/");
+            }
+            os_string.push(path);
         }
-
-        let os_string = self.0.as_mut_os_string();
-        if !os_string.is_empty() {
-            os_string.push("/");
-        }
-        os_string.push(path);
     }
 
     /// Truncates `self` to [`self.parent`].
