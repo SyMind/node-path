@@ -353,6 +353,7 @@ impl Utf8PathBuf {
     /// path.push("/etc");
     /// assert_eq!(path, Utf8PathBuf::from("/tmp/etc"));
     /// ```
+    #[inline]
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
         if cfg!(windows) {
             self.push_win32(path);
@@ -417,10 +418,7 @@ impl Utf8PathBuf {
         }
         joined.push_str(path);
 
-        let mut first_part = self.as_str().as_bytes();
-        if first_part.is_empty() {
-            first_part = joined.as_bytes();
-        }
+        let first_part = self.as_str().as_bytes();
         // Make sure that the joined path doesn't start with two slashes, because
         // normalize() will mistake it for a UNC path then.
         //
@@ -439,9 +437,9 @@ impl Utf8PathBuf {
 
         if is_path_separator(&first_part[0]) {
             slash_count += 1;
-            if path.len() > 1 && is_path_separator(&first_part[1]) {
+            if first_part.len() > 1 && is_path_separator(&first_part[1]) {
                 slash_count += 1;
-                if path.len() > 2 {
+                if first_part.len() > 2 {
                     if is_path_separator(&first_part[2]) {
                         slash_count += 1;
                     } else {
@@ -465,12 +463,12 @@ impl Utf8PathBuf {
 
             // Replace the slashes if needed
             if slash_count >= 2 {
-                let mut res = String::with_capacity(joined.len());
-                res.push('\\');
-                res.push_str(&joined[slash_count..]);
-                self.0 = PathBuf::from(res);
+                self.0 = PathBuf::from(format!("\\{}", &joined[slash_count..]));
+                return;
             }
         }
+
+        self.0 = PathBuf::from(joined);
     }
 
     /// Truncates `self` to [`self.parent`].
@@ -1217,12 +1215,22 @@ impl Utf8Path {
     #[inline]
     #[must_use]
     pub fn join(&self, path: impl AsRef<Utf8Path>) -> Utf8PathBuf {
-        self._join(path.as_ref())
+        if cfg!(windows) {
+            self.join_win32(path)
+        } else {
+            self.join_posix(path)
+        }
     }
 
-    fn _join(&self, path: &Utf8Path) -> Utf8PathBuf {
+    fn join_posix(&self, path: impl AsRef<Utf8Path>) -> Utf8PathBuf {
         let mut buf = self.to_path_buf();
-        buf.push(path);
+        buf.push_posix(path);
+        buf
+    }
+
+    fn join_win32(&self, path: impl AsRef<Utf8Path>) -> Utf8PathBuf {
+        let mut buf = self.to_path_buf();
+        buf.push_win32(path);
         buf
     }
 

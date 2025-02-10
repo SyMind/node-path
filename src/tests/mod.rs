@@ -3,6 +3,9 @@
 
 // Test that all required impls exist.
 
+mod test_path_join;
+mod test_path_normalize;
+
 use crate::{Utf8Path, Utf8PathBuf};
 use std::{
     borrow::Cow,
