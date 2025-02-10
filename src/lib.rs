@@ -355,8 +355,17 @@ impl Utf8PathBuf {
     /// assert_eq!(path, Utf8PathBuf::from("/etc"));
     /// ```
     pub fn push(&mut self, path: impl AsRef<Utf8Path>) {
-        self.0.as_mut_os_string().push(path.as_ref());
-        self.normalize();
+        let path = path.as_ref().as_str();
+
+        if path.is_empty() {
+            return;
+        }
+
+        let os_string = self.0.as_mut_os_string();
+        if !os_string.is_empty() {
+            os_string.push("/");
+        }
+        os_string.push(path);
     }
 
     /// Truncates `self` to [`self.parent`].
@@ -1632,6 +1641,8 @@ impl Utf8Path {
     /// whereas a few POSIX systems assign special meaning to paths beginning with exactly two forward slashes.
     /// Similarly, other substitutions performed by this function, such as removing .. segments,
     /// may change how the underlying system resolves the path.
+    #[inline]
+    #[must_use]
     pub fn normalize(&self) -> Utf8PathBuf {
         if cfg!(windows) {
             self.normalize_win32()
