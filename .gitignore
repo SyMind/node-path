@@ -1,0 +1,17 @@
+# Rust build and generated evidence
+/target/
+/debug/
+/release/
+*.rs.bk
+*.rlib
+*.prof*
+
+# Local tooling and environment
+.env*
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

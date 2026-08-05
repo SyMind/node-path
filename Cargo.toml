@@ -1,0 +1,37 @@
+[package]
+name = "node-path"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+resolver = "3"
+autobenches = false
+description = "Allocation-conscious Rust implementation of Node.js path semantics"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/SyMind/node-path"
+documentation = "https://docs.rs/node-path"
+keywords = ["node", "path", "posix", "windows"]
+categories = ["filesystem"]
+include = [
+    "src/**",
+    "benches/**",
+    "Cargo.toml",
+    "Cargo.lock",
+    "README.md",
+    "LICENSE",
+    "UPSTREAM_LICENSE_NODE.txt",
+    "THIRD_PARTY_NOTICES.md",
+]
+
+[dependencies]
+regress = { version = "=0.11.1", default-features = false, features = ["std", "utf16", "prohibit-unsafe"] }
+
+[dev-dependencies]
+divan = { package = "codspeed-divan-compat", version = "=5.0.1" }
+proptest = "1.7"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[[bench]]
+name = "path_ops"
+harness = false
