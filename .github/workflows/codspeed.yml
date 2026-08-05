@@ -1,0 +1,40 @@
+name: CodSpeed Performance Analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  benchmarks:
+    name: CodSpeed Performance Analysis
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust 1.97.1
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.97.1
+
+      - name: Install cargo-codspeed 5.0.1
+        run: cargo install cargo-codspeed --version 5.0.1 --locked
+
+      - name: Verify compatibility release gate
+        run: |
+          cargo +1.97.1 test --locked --test node_path
+          jq -e '.releasable == true' target/parity-summary.json
+
+      - name: Build CPU Simulation benchmarks
+        run: cargo +1.97.1 codspeed build -m simulation --locked --bench path_ops
+
+      - name: Run CPU Simulation benchmarks
+        uses: CodSpeedHQ/action@v5
+        with:
+          mode: simulation
+          run: cargo +1.97.1 codspeed run -m simulation --bench path_ops
