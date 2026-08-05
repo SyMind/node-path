@@ -16,13 +16,14 @@ Rust import name: `node_path`
 | `path.posix` | `node_path::posix` |
 | `path.win32` | `node_path::win32` |
 | camel-case method | equivalent snake-case function |
-| `path._makeLong` | deprecated `_make_long` alias |
 | JavaScript variadic strings | `&[&str]` |
 | JavaScript path object | `PathObject<S>` |
 | process cwd / `=C:` environment | `PathContext` or environment-backed wrapper |
 
 Crate-root functions select Windows semantics on Windows and POSIX semantics on every other target,
 matching pinned Node's default export selection.
+
+Node's legacy underscored `_makeLong` alias is intentionally not part of the Rust API.
 
 ## Public Constants
 
@@ -189,17 +190,6 @@ MUST be thin adapters that snapshot equivalent process context and delegate. `ma
 For POSIX `to_namespaced_path`, the result is always the original string content. The uniform
 context-aware contract remains so callers and conformance tables can use the same operation model.
 
-## Deprecated Alias
-
-```rust
-#[deprecated(note = "Node compatibility alias; use to_namespaced_path")]
-pub fn _make_long(path: &str)
-    -> Result<std::borrow::Cow<'_, str>, ContextError>;
-```
-
-Each explicit namespace also exposes the equivalent context-aware alias. Alias behavior MUST be
-identical to `to_namespaced_path`; it has no independent implementation.
-
 ## `matches_glob` Behavioral Contract
 
 The matcher reproduces pinned minimatch 10.2.5 using Node's exact option set:
@@ -241,7 +231,6 @@ context-taking call.
 | `format` | Yes | Yes | Yes | No | Yes |
 | `parse` | Yes | Yes | Yes | No | Yes |
 | `matches_glob` | Yes | Yes | Yes | Node host | Yes |
-| `_make_long` | Yes | Yes | Yes | Uniform contract | Alias case |
 | `SEP` / `DELIMITER` | Yes | Yes | Yes | No | No |
 
 ## Packaging Contract

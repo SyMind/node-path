@@ -113,7 +113,7 @@ set and compare every affected operation with its accepted result and performanc
 - **FR-002**: The library MUST expose explicit POSIX and Windows variants equivalent to
   `path.posix` and `path.win32`, including their `sep` and `delimiter` values.
 - **FR-003**: The library MUST provide host-default behavior equivalent to Node.js platform
-  selection and MUST retain the deprecated `_makeLong` behavior when claiming full API parity.
+  selection. Node's legacy underscored `_makeLong` alias is explicitly excluded from the Rust API.
 - **FR-004**: For every input in the declared Rust domain, operation results MUST match the pinned
   Node.js baseline for content, separator choice, trailing-separator handling, normalization, and
   structured parse data.
@@ -155,13 +155,13 @@ set and compare every affected operation with its accepted result and performanc
 
 - Public behavior from Node.js `lib/path.js` at commit
   `3f42cfacf27e348297a52d89b4cdc48b35cb7559`.
-- Explicit POSIX, explicit Windows, and host-default variants; constants; the deprecated `_makeLong`
-  alias; and `matchesGlob`.
+- Explicit POSIX, explicit Windows, and host-default variants; constants; and `matchesGlob`.
 - All public path semantics exercised by the 17 pinned `test-path*.js` files, including cases that
   require deterministic current-directory or platform context.
 
 **Out of scope**:
 
+- Node's legacy underscored `_makeLong` alias; callers use `to_namespaced_path` instead.
 - File-system access, path existence, permissions, file contents, URL conversion, and module
   loading behavior not exposed by Node.js `path`.
 - Literal emulation of JavaScript object identity, coercion, `undefined`, or dynamic-type behavior

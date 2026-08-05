@@ -28,7 +28,6 @@ root selects POSIX on non-Windows targets and Win32 on Windows, matching Node's 
 | `path.extname(value)` | `extname(value)` |
 | `path.parse(value)` / `path.format(object)` | `parse(value)` / `format(&object)` |
 | `path.matchesGlob(value, pattern)` | `matches_glob(value, pattern)` |
-| `path._makeLong(value)` | `_make_long(value)` (deprecated alias) |
 
 ```rust
 use node_path::{PathContext, NodeHost, posix, win32};

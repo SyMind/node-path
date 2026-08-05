@@ -1,6 +1,6 @@
 use std::borrow::Cow;
 
-use node_path::{NodeHost, ParsedPath, PathContext, PathObject};
+use node_path::{ParsedPath, PathObject};
 
 #[test]
 fn exposes_node_namespaces_constants_and_snake_case_functions() {
@@ -50,14 +50,4 @@ fn crate_root_selects_the_target_namespace() {
             node_path::posix::normalize("a/b")
         );
     }
-}
-
-#[test]
-#[allow(deprecated)]
-fn deprecated_alias_is_identical_to_namespaced_path() {
-    let context = PathContext::new(NodeHost::OtherPosix, "/tmp", vec![]).unwrap();
-    assert_eq!(
-        node_path::posix::_make_long_with_context(&context, "a"),
-        node_path::posix::to_namespaced_path_with_context(&context, "a")
-    );
 }

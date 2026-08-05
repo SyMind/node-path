@@ -14,7 +14,6 @@ const methods = new Map([
   ['relative', 'relative'],
   ['to-namespaced-path', 'toNamespacedPath'],
   ['toNamespacedPath', 'toNamespacedPath'],
-  ['make-long', '_makeLong'],
   ['dirname', 'dirname'],
   ['basename', 'basename'],
   ['extname', 'extname'],

@@ -317,16 +317,6 @@ pub fn to_namespaced_path(path: &str) -> Result<Cow<'_, str>, ContextError> {
     Ok(to_namespaced_path_with_context(&context, path))
 }
 
-#[deprecated(note = "Node compatibility alias; use to_namespaced_path")]
-pub fn _make_long(path: &str) -> Result<Cow<'_, str>, ContextError> {
-    to_namespaced_path(path)
-}
-
-#[deprecated(note = "Node compatibility alias; use to_namespaced_path_with_context")]
-pub fn _make_long_with_context<'a>(context: &PathContext, path: &'a str) -> Cow<'a, str> {
-    to_namespaced_path_with_context(context, path)
-}
-
 pub fn matches_glob(path: &str, pattern: &str) -> Result<bool, GlobError> {
     crate::glob::matches(false, NodeHost::current(), path, pattern)
 }

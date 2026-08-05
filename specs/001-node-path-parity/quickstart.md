@@ -104,7 +104,6 @@ The conformance suite must demonstrate at least these end-to-end scenarios throu
 4. `basename` suffix removal and `extname` handling for leading/trailing/multiple dots.
 5. `matches_glob_with_context` under Win32, Darwin, and OtherPosix Node hosts for both namespaces.
 6. Crate-root default selection on the current target.
-7. Deprecated `_make_long` returning the same content as `to_namespaced_path`.
 
 Each failure must report its stable upstream case ID, expected result, actual result, source file,
 baseline commit, and local counterpart.

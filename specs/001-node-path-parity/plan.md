@@ -54,8 +54,7 @@ is valid Unicode scalar strings; deterministic calls use explicit immutable cont
 no v1 global cache, filesystem I/O, process mutation, or Node runtime dependency
 
 **Scale/Scope**: 12 public path operations, two explicit namespaces plus host-default selection,
-two constants per namespace, deprecated `_makeLong`, 17 upstream files, 301 assertion sites, and
-1,406 expanded cases
+two constants per namespace, 17 upstream files, 301 assertion sites, and 1,406 expanded cases
 
 ## Constitution Check
 
@@ -273,8 +272,8 @@ without improving a standalone path library.
 
 - Implement deterministic resolve/relative/toNamespacedPath using supplied cwd and drive mappings.
 - Add environment snapshot adapters and target-selected root exports.
-- Port cwd, drive-cwd, host-default, empty-cwd, fixture, and `_makeLong` cases without global state
-  mutation.
+- Port cwd, drive-cwd, host-default, empty-cwd, fixture, and namespaced-path cases without global
+  state mutation.
 
 ### Stage E: Exact Glob Compatibility
 

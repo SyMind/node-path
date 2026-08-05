@@ -64,7 +64,7 @@ match the pinned Node result; the exhaustive 17-file audit is not yet required f
 
 > Write these tests first and confirm they fail for unimplemented behavior.
 
-- [X] T016 [P] [US1] Write failing public namespace, constant, snake-case mapping, borrowed/owned return, deprecated alias, and host-default selection contract tests in `tests/api_contract.rs`
+- [X] T016 [P] [US1] Write failing public namespace, constant, snake-case mapping, borrowed/owned return, and host-default selection contract tests in `tests/api_contract.rs`
 - [X] T017 [P] [US1] Write failing representative POSIX tests for all context-free operations, parse/format precedence, empty input, roots, repeated separators, dot segments, backslash-as-data, suffix/dot, and Unicode cases in `tests/posix_contract.rs`
 - [X] T018 [P] [US1] Write failing representative Windows tests for all context-free operations, drives, UNC, device/namespaced paths, reserved names, mixed separators, streams, suffix/dot, and Unicode cases in `tests/win32_contract.rs`
 - [X] T019 [P] [US1] Write failing deterministic tests for POSIX/Windows resolve, relative, to-namespaced-path, drive cwd fallback, empty cwd, and environment-backed facade equivalence in `tests/contextual_contract.rs`
@@ -77,8 +77,8 @@ match the pinned Node result; the exhaustive 17-file audit is not yet required f
 - [X] T023 [P] [US1] Implement Windows `SEP`, `DELIMITER`, normalize, is-absolute, join, dirname, basename, and extname behavior to pass T018 in `src/win32.rs`
 - [X] T024 [US1] Implement borrowed parse results and Node-compatible format precedence/extension behavior for both namespaces using `PathObject` in `src/path_object.rs`, `src/posix.rs`, and `src/win32.rs`
 - [X] T025 [P] [US1] Implement POSIX resolve, relative, and identity to-namespaced-path with explicit `PathContext`, plus environment-backed adapters, in `src/posix.rs`
-- [X] T026 [P] [US1] Implement Windows resolve, relative, to-namespaced-path, drive-cwd fallback, UNC/device handling, and `_make_long` alias with explicit `PathContext` in `src/win32.rs`
-- [X] T027 [US1] Implement crate-root target-selected constants/functions, context snapshot delegation, public error/type exports, and deprecated alias mapping in `src/lib.rs`
+- [X] T026 [P] [US1] Implement Windows resolve, relative, to-namespaced-path, drive-cwd fallback, and UNC/device handling with explicit `PathContext` in `src/win32.rs`
+- [X] T027 [US1] Implement crate-root target-selected constants/functions, context snapshot delegation, and public error/type exports in `src/lib.rs`
 - [X] T028 [P] [US1] Port pinned minimatch 10.2.5 brace expansion, expansion limits, UTF-16 length accounting, and required upstream notices in `src/glob/brace.rs`
 - [X] T029 [US1] Port pinned minimatch parsing/optimization/regex-source generation, extglob/globstar recursion limits, separator rules, and Node option handling in `src/glob/minimatch.rs`
 - [X] T030 [US1] Integrate exact `regress` 0.11.1 UTF-16/UCS-2 execution, `NodeHost` case behavior, pattern resource errors, and no-cache matching in `src/glob/mod.rs`

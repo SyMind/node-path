@@ -66,7 +66,7 @@ function encode(value, seen = new WeakSet()) {
 
 const publicMethods = new Set([
   'resolve', 'normalize', 'isAbsolute', 'join', 'relative',
-  'toNamespacedPath', '_makeLong', 'dirname', 'basename', 'extname',
+  'toNamespacedPath', 'dirname', 'basename', 'extname',
   'format', 'parse', 'matchesGlob',
 ]);
 
@@ -79,8 +79,6 @@ function proxyFor(namespace, object) {
     get(targetObject, property, receiver) {
       if (property === 'posix') return proxyFor('posix', nativePath.posix);
       if (property === 'win32') return proxyFor('win32', nativePath.win32);
-      // Node exposes this deprecated alias as the exact same function object.
-      if (property === '_makeLong') return Reflect.get(receiver, 'toNamespacedPath');
       const value = Reflect.get(targetObject, property, receiver);
       if ((property === 'sep' || property === 'delimiter') && relevantCall()) {
         calls.push({

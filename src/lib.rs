@@ -143,9 +143,3 @@ pub fn matches_glob(path: &str, pattern: &str) -> Result<bool, GlobError> {
         posix::matches_glob(path, pattern)
     }
 }
-
-#[deprecated(note = "Node compatibility alias; use to_namespaced_path")]
-/// Deprecated Node compatibility alias for [`to_namespaced_path`].
-pub fn _make_long(path: &str) -> Result<Cow<'_, str>, ContextError> {
-    to_namespaced_path(path)
-}

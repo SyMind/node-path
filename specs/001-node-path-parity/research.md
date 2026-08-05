@@ -59,7 +59,6 @@ Use Rust naming while documenting the Node mapping:
 - `resolve`, `normalize`, `is_absolute`, `join`, `relative`
 - `to_namespaced_path`, `dirname`, `basename`, `extname`
 - `format`, `parse`, `matches_glob`
-- deprecated `_make_long` for Node `_makeLong`
 - `SEP` and `DELIMITER` as `&'static str`
 
 Inputs are Unicode `&str`; variadic Node arguments map to `&[&str]`. Use borrowed or conditionally
