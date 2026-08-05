@@ -1,0 +1,2288 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-join.js",
+  "cases": [
+    {
+      "id": "test_path_join_0001",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "x/b/c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0002",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0003",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/.",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "/x/b/c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0004",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/foo",
+        "../../../bar"
+      ],
+      "expected": "/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0005",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "../../../bar"
+      ],
+      "expected": "../../bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0006",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        "../../../bar"
+      ],
+      "expected": "../../bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0007",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "../../../bar"
+      ],
+      "expected": "../bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0008",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "./bar"
+      ],
+      "expected": "foo/x/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0009",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        "./bar"
+      ],
+      "expected": "foo/x/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0010",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        ".",
+        "bar"
+      ],
+      "expected": "foo/x/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0011",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "./"
+      ],
+      "expected": "./",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0012",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./"
+      ],
+      "expected": "./",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0013",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        ".",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0014",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0015",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0016",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/////./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0017",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0018",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0019",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0020",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "/bar"
+      ],
+      "expected": "foo/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0021",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0022",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "/foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0023",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0024",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        ""
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0025",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        ""
+      ],
+      "expected": "foo/",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0026",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "",
+        "/bar"
+      ],
+      "expected": "foo/bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0027",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "/foo"
+      ],
+      "expected": "../foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0028",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "../../foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0029",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "../../foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0030",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "../../foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0031",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/"
+      ],
+      "expected": "/",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0032",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "."
+      ],
+      "expected": "/",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0033",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        ".."
+      ],
+      "expected": "/",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0034",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "..",
+        ".."
+      ],
+      "expected": "/",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0035",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0036",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0037",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        " /foo"
+      ],
+      "expected": " /foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0038",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "foo"
+      ],
+      "expected": " /foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0039",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "."
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0040",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "/"
+      ],
+      "expected": " /",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0041",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        " ",
+        ""
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0042",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0043",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "/foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0044",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "//foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0045",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "",
+        "/foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0046",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0047",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "/foo"
+      ],
+      "expected": "/foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0048",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "x\\b\\c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0049",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0050",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/.",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "\\x\\b\\c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0051",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/foo",
+        "../../../bar"
+      ],
+      "expected": "\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0052",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "../../../bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0053",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        "../../../bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0054",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "../../../bar"
+      ],
+      "expected": "..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0055",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "./bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0056",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        "./bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0057",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        ".",
+        "bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0058",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./"
+      ],
+      "expected": ".\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0059",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./"
+      ],
+      "expected": ".\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0060",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        ".",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0061",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0062",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0063",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/////./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0064",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0065",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0066",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0067",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "/bar"
+      ],
+      "expected": "foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0068",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0069",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0070",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0071",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        ""
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0072",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        ""
+      ],
+      "expected": "foo\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0073",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "",
+        "/bar"
+      ],
+      "expected": "foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0074",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0075",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0076",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0077",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0078",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/"
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0079",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0080",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        ".."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0081",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "..",
+        ".."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0082",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0083",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0084",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " /foo"
+      ],
+      "expected": " \\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0085",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "foo"
+      ],
+      "expected": " \\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0086",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "."
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0087",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "/"
+      ],
+      "expected": " \\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0088",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        ""
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0089",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0090",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0091",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "//foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0092",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0093",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0094",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0095",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "x\\b\\c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0096",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0097",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/.",
+        "x/b",
+        "..",
+        "/b/c.js"
+      ],
+      "expected": "\\x\\b\\c.js",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0098",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/foo",
+        "../../../bar"
+      ],
+      "expected": "\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0099",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "../../../bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0100",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        "../../../bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0101",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "../../../bar"
+      ],
+      "expected": "..\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0102",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x",
+        "./bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0103",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        "./bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0104",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/x/",
+        ".",
+        "bar"
+      ],
+      "expected": "foo\\x\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0105",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./"
+      ],
+      "expected": ".\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0106",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./"
+      ],
+      "expected": ".\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0107",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        ".",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0108",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0109",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0110",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "/////./",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0111",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0112",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "."
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0113",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0114",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "/bar"
+      ],
+      "expected": "foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0115",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0116",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0117",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "",
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0118",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        ""
+      ],
+      "expected": "foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0119",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo/",
+        ""
+      ],
+      "expected": "foo\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0120",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "foo",
+        "",
+        "/bar"
+      ],
+      "expected": "foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0121",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0122",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0123",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ".",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0124",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "..",
+        "..",
+        "/foo"
+      ],
+      "expected": "..\\..\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0125",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/"
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0126",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0127",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        ".."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0128",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "..",
+        ".."
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0129",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0130",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": ".",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0131",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " /foo"
+      ],
+      "expected": " \\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0132",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "foo"
+      ],
+      "expected": " \\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0133",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "."
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0134",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        "/"
+      ],
+      "expected": " \\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0135",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        " ",
+        ""
+      ],
+      "expected": " ",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0136",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0137",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0138",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "//foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0139",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "/",
+        "",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0140",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0141",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "/foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0142",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0143",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\/foo/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0144",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\\\foo/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0145",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0146",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo/",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0147",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo",
+        "/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0148",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo",
+        "",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0149",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo/",
+        "",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0150",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo/",
+        "",
+        "/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0151",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "//foo",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0152",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "//foo/",
+        "bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0153",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "//foo/",
+        "/bar"
+      ],
+      "expected": "\\\\foo\\bar\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0154",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\",
+        "foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0155",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\",
+        "/foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0156",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "/",
+        "/foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0157",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//",
+        "foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0158",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//",
+        "/foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0159",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\\\",
+        "/",
+        "/foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0160",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//"
+      ],
+      "expected": "\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0161",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo"
+      ],
+      "expected": "\\foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0162",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo/"
+      ],
+      "expected": "\\foo\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0163",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo",
+        "/"
+      ],
+      "expected": "\\foo\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0164",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "//foo",
+        "",
+        "/"
+      ],
+      "expected": "\\foo\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0165",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "///foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0166",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "////foo",
+        "bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0167",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\\\\\/foo/bar"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0168",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:"
+      ],
+      "expected": "c:.",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0169",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:."
+      ],
+      "expected": "c:.",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0170",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:",
+        ""
+      ],
+      "expected": "c:.",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0171",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        "c:"
+      ],
+      "expected": "c:.",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0172",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:.",
+        "/"
+      ],
+      "expected": "c:.\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0173",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:.",
+        "file"
+      ],
+      "expected": "c:file",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0174",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:",
+        "/"
+      ],
+      "expected": "c:\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0175",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "c:",
+        "file"
+      ],
+      "expected": "c:\\file",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0176",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\server\\share",
+        "file.txt"
+      ],
+      "expected": "\\server\\share\\file.txt",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0177",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\server\\share",
+        "folder",
+        "another.txt"
+      ],
+      "expected": "\\server\\share\\folder\\another.txt",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0178",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\server\\share",
+        "COM1:"
+      ],
+      "expected": "\\server\\share\\COM1:",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0179",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\server\\share",
+        "path",
+        "LPT1:"
+      ],
+      "expected": "\\server\\share\\path\\LPT1:",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0180",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "\\fileserver\\public\\uploads",
+        "CON:..\\..\\..\\private\\db.conf"
+      ],
+      "expected": "\\fileserver\\public\\uploads\\CON:..\\..\\..\\private\\db.conf",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0181",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "./upload",
+        "/../C:/Windows"
+      ],
+      "expected": ".\\C:\\Windows",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0182",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "upload",
+        "../",
+        "C:foo"
+      ],
+      "expected": ".\\C:foo",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0183",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "test/..",
+        "??/D:/Test"
+      ],
+      "expected": ".\\??\\D:\\Test",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0184",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "test",
+        "..",
+        "D:"
+      ],
+      "expected": ".\\D:",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0185",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "test",
+        "..",
+        "D:\\"
+      ],
+      "expected": ".\\D:\\",
+      "source_line": 136,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_join_0186",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "test",
+        "..",
+        "D:foo"
+      ],
+      "expected": ".\\D:foo",
+      "source_line": 136,
+      "source_column": 27
+    }
+  ]
+}

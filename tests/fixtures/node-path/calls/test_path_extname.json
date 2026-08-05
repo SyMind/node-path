@@ -1,0 +1,1601 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-extname.js",
+  "cases": [
+    {
+      "id": "test_path_extname_0001",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/node-source/test/parallel/test-path-extname.js"
+      ],
+      "expected": ".js",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0002",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\node-source\\test\\parallel\\test-path-extname.js"
+      ],
+      "expected": ".js",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0003",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\node-source\\test\\parallel\\test-path-extname.js"
+      ],
+      "expected": ".js",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0004",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0005",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0006",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0007",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path/to/file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0008",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path\\to\\file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0009",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\to\\file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0010",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path/to/file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0011",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path\\to\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0012",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\to\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0013",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path.to/file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0014",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path.to\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0015",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path.to\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0016",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path.to/file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0017",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path.to\\file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0018",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path.to\\file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0019",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path.to/.file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0020",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path.to\\.file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0021",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path.to\\.file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0022",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path.to/.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0023",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path.to\\.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0024",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path.to\\.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0025",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path/to/f.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0026",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path\\to\\f.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0027",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\to\\f.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0028",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path/to/..ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0029",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path\\to\\..ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0030",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\to\\..ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0031",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/path/to/.."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0032",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\path\\to\\.."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0033",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\to\\.."
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0034",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0035",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0036",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0037",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0038",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0039",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0040",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0041",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0042",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0043",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0044",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0045",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0046",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0047",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0048",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0049",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0050",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0051",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0052",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/.file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0053",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\.file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0054",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\.file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0055",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0056",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0057",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0058",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".path/file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0059",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".path\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0060",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.path\\file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0061",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0062",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0063",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.ext.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0064",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0065",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0066",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0067",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0068",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0069",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:."
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0070",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "./"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0071",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".\\"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0072",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.\\"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0073",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0074",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0075",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0076",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0077",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0078",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0079",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0080",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0081",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0082",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".file.."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0083",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".file.."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0084",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.file.."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0085",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0086",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".."
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0087",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.."
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0088",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "../"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0089",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..\\"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0090",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..\\"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0091",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0092",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0093",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..file.ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0094",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..file"
+      ],
+      "expected": ".file",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0095",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..file"
+      ],
+      "expected": ".file",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0096",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..file"
+      ],
+      "expected": ".file",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0097",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0098",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..file."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0099",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..file."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0100",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..file.."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0101",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..file.."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0102",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..file.."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0103",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0104",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0105",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:..."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0106",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "...ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0107",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "...ext"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0108",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:...ext"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0109",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "...."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0110",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "...."
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0111",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:...."
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0112",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext/"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0113",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0114",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.ext\\"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0115",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext//"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0116",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\\\"
+      ],
+      "expected": ".ext",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0117",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.ext\\\\"
+      ],
+      "expected": ".ext",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0118",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file/"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0119",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file\\"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0120",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file\\"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0121",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file//"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0122",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file\\\\"
+      ],
+      "expected": "",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0123",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file\\\\"
+      ],
+      "expected": "",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0124",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file./"
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0125",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.\\"
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0126",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.\\"
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0127",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.//"
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0128",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.\\\\"
+      ],
+      "expected": ".",
+      "source_line": 67,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_extname_0129",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:file.\\\\"
+      ],
+      "expected": ".",
+      "source_line": 74,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_extname_0130",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".\\"
+      ],
+      "expected": "",
+      "source_line": 83,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0131",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "..\\"
+      ],
+      "expected": "",
+      "source_line": 84,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0132",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\"
+      ],
+      "expected": ".ext",
+      "source_line": 85,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0133",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\\\"
+      ],
+      "expected": ".ext",
+      "source_line": 86,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0134",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file\\"
+      ],
+      "expected": "",
+      "source_line": 87,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0135",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file\\\\"
+      ],
+      "expected": "",
+      "source_line": 88,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0136",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.\\"
+      ],
+      "expected": ".",
+      "source_line": 89,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0137",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file.\\\\"
+      ],
+      "expected": ".",
+      "source_line": 90,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0138",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".\\"
+      ],
+      "expected": "",
+      "source_line": 93,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0139",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "..\\"
+      ],
+      "expected": ".\\",
+      "source_line": 94,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0140",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\"
+      ],
+      "expected": ".ext\\",
+      "source_line": 95,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0141",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.ext\\\\"
+      ],
+      "expected": ".ext\\\\",
+      "source_line": 96,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0142",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file\\"
+      ],
+      "expected": "",
+      "source_line": 97,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0143",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file\\\\"
+      ],
+      "expected": "",
+      "source_line": 98,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0144",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.\\"
+      ],
+      "expected": ".\\",
+      "source_line": 99,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_extname_0145",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file.\\\\"
+      ],
+      "expected": ".\\\\",
+      "source_line": 100,
+      "source_column": 31
+    }
+  ]
+}

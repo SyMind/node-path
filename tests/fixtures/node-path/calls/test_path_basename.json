@@ -1,0 +1,703 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-basename.js",
+  "cases": [
+    {
+      "id": "test_path_basename_0001",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/node-source/test/parallel/test-path-basename.js"
+      ],
+      "expected": "test-path-basename.js",
+      "source_line": 6,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0002",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/node-source/test/parallel/test-path-basename.js",
+        ".js"
+      ],
+      "expected": "test-path-basename",
+      "source_line": 7,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0003",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        ".js",
+        ".js"
+      ],
+      "expected": "",
+      "source_line": 8,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0004",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "js",
+        ".js"
+      ],
+      "expected": "js",
+      "source_line": 9,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0005",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "file.js",
+        ".ts"
+      ],
+      "expected": "file.js",
+      "source_line": 10,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0006",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "file",
+        ".js"
+      ],
+      "expected": "file",
+      "source_line": 11,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0007",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "file.js.old",
+        ".js.old"
+      ],
+      "expected": "file",
+      "source_line": 12,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0008",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 13,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0009",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/dir/basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 14,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0010",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 15,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0011",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 16,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0012",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext/"
+      ],
+      "expected": "basename.ext",
+      "source_line": 17,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0013",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext//"
+      ],
+      "expected": "basename.ext",
+      "source_line": 18,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0014",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb",
+        "/bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 19,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0015",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb",
+        "a/bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 20,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0016",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 21,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0017",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb//",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 22,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0018",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb",
+        "bb"
+      ],
+      "expected": "b",
+      "source_line": 23,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0019",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "aaa/bbb",
+        "b"
+      ],
+      "expected": "bb",
+      "source_line": 24,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0020",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb",
+        "/bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 25,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0021",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb",
+        "a/bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 26,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0022",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 27,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0023",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb//",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 28,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0024",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb",
+        "bb"
+      ],
+      "expected": "b",
+      "source_line": 29,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0025",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb",
+        "b"
+      ],
+      "expected": "bb",
+      "source_line": 30,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0026",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 31,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0027",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/"
+      ],
+      "expected": "aaa",
+      "source_line": 32,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0028",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/aaa/b"
+      ],
+      "expected": "b",
+      "source_line": 33,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0029",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/a/b"
+      ],
+      "expected": "b",
+      "source_line": 34,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0030",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "//a"
+      ],
+      "expected": "a",
+      "source_line": 35,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0031",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "a",
+        "a"
+      ],
+      "expected": "",
+      "source_line": 36,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_basename_0032",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\dir\\basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 39,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0033",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 40,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0034",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 41,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0035",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext\\"
+      ],
+      "expected": "basename.ext",
+      "source_line": 42,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0036",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext\\\\"
+      ],
+      "expected": "basename.ext",
+      "source_line": 43,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0037",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 44,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0038",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb",
+        "\\bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 45,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0039",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb",
+        "a\\bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 46,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0040",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 47,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0041",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb\\\\\\\\",
+        "bbb"
+      ],
+      "expected": "bbb",
+      "source_line": 48,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0042",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb",
+        "bb"
+      ],
+      "expected": "b",
+      "source_line": 49,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0043",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "aaa\\bbb",
+        "b"
+      ],
+      "expected": "bb",
+      "source_line": 50,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0044",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "",
+      "source_line": 51,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0045",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:."
+      ],
+      "expected": ".",
+      "source_line": 52,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0046",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\"
+      ],
+      "expected": "",
+      "source_line": 53,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0047",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\dir\\base.ext"
+      ],
+      "expected": "base.ext",
+      "source_line": 54,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0048",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 55,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0049",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 56,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0050",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:basename.ext\\"
+      ],
+      "expected": "basename.ext",
+      "source_line": 57,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0051",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:basename.ext\\\\"
+      ],
+      "expected": "basename.ext",
+      "source_line": 58,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0052",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:foo"
+      ],
+      "expected": "foo",
+      "source_line": 59,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0053",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": "file:stream",
+      "source_line": 60,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0054",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "a",
+        "a"
+      ],
+      "expected": "",
+      "source_line": 61,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0055",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "\\dir\\basename.ext"
+      ],
+      "expected": "\\dir\\basename.ext",
+      "source_line": 64,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0056",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "\\basename.ext"
+      ],
+      "expected": "\\basename.ext",
+      "source_line": 66,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0057",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext"
+      ],
+      "expected": "basename.ext",
+      "source_line": 67,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0058",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext\\"
+      ],
+      "expected": "basename.ext\\",
+      "source_line": 68,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0059",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "basename.ext\\\\"
+      ],
+      "expected": "basename.ext\\\\",
+      "source_line": 69,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0060",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo"
+      ],
+      "expected": "foo",
+      "source_line": 70,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_basename_0061",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/a/b/Icon\r"
+      ],
+      "expected": "Icon\r",
+      "source_line": 75,
+      "source_column": 31
+    }
+  ]
+}

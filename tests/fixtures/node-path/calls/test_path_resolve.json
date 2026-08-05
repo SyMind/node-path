@@ -1,0 +1,297 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-resolve.js",
+  "cases": [
+    {
+      "id": "test_path_resolve_0001",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/blah\\blah",
+        "d:/games",
+        "c:../a"
+      ],
+      "expected": "c:\\blah\\a",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0002",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/ignore",
+        "d:\\a/b\\c/d",
+        "\\e.exe"
+      ],
+      "expected": "d:\\e.exe",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0003",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/ignore",
+        "c:/some/file"
+      ],
+      "expected": "c:\\some\\file",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0004",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "d:/ignore",
+        "d:some/dir//"
+      ],
+      "expected": "d:\\ignore\\some\\dir",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0005",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [],
+      "expected": "\\node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0006",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        ""
+      ],
+      "expected": "\\node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0007",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "."
+      ],
+      "expected": "\\node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0008",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "//server/share",
+        "..",
+        "relative\\"
+      ],
+      "expected": "\\\\server\\share\\relative",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0009",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/",
+        "//"
+      ],
+      "expected": "c:\\",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0010",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/",
+        "//dir"
+      ],
+      "expected": "c:\\dir",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0011",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/",
+        "//server/share"
+      ],
+      "expected": "\\\\server\\share\\",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0012",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/",
+        "//server//share"
+      ],
+      "expected": "\\\\server\\share\\",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0013",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "c:/",
+        "///some//dir"
+      ],
+      "expected": "c:\\some\\dir",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0014",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "C:\\foo\\tmp.3\\",
+        "..\\tmp.3\\cycles\\root.js"
+      ],
+      "expected": "C:\\foo\\tmp.3\\cycles\\root.js",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0015",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "\\\\.\\PHYSICALDRIVE0"
+      ],
+      "expected": "\\\\.\\PHYSICALDRIVE0",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0016",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        "\\\\?\\PHYSICALDRIVE0"
+      ],
+      "expected": "\\\\?\\PHYSICALDRIVE0",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0017",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "/var/lib",
+        "../",
+        "file/"
+      ],
+      "expected": "/var/file",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0018",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "/var/lib",
+        "/../",
+        "file/"
+      ],
+      "expected": "/file",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0019",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "a/b/c/",
+        "../../.."
+      ],
+      "expected": "/node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0020",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [],
+      "expected": "/node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0021",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        ""
+      ],
+      "expected": "/node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0022",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "."
+      ],
+      "expected": "/node-source",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0023",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "/some/dir",
+        ".",
+        "/absolute/"
+      ],
+      "expected": "/absolute",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0024",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "/foo/tmp.3/",
+        "../tmp.3/cycles/root.js"
+      ],
+      "expected": "/foo/tmp.3/cycles/root.js",
+      "source_line": 57,
+      "source_column": 28
+    },
+    {
+      "id": "test_path_resolve_0025",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [],
+      "expected": ".",
+      "source_line": 89,
+      "source_column": 25
+    }
+  ]
+}

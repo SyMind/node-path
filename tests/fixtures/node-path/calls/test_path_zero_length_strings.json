@@ -1,0 +1,189 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-zero-length-strings.js",
+  "cases": [
+    {
+      "id": "test_path_zero_length_strings_0001",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 15,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0002",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": ".",
+      "source_line": 16,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0003",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 17,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0004",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": ".",
+      "source_line": 18,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0005",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/node-source"
+      ],
+      "expected": "/node-source",
+      "source_line": 19,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0006",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        "/node-source",
+        ""
+      ],
+      "expected": "/node-source",
+      "source_line": 20,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0007",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 23,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0008",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 24,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0009",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "/node-source"
+      ],
+      "expected": "/node-source",
+      "source_line": 25,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0010",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        ""
+      ],
+      "expected": false,
+      "source_line": 28,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0011",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        ""
+      ],
+      "expected": false,
+      "source_line": 29,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_zero_length_strings_0012",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        ""
+      ],
+      "expected": "/node-source",
+      "source_line": 33,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0013",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        "",
+        ""
+      ],
+      "expected": "/node-source",
+      "source_line": 34,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0014",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "",
+        "/node-source"
+      ],
+      "expected": "",
+      "source_line": 37,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0015",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/node-source",
+        ""
+      ],
+      "expected": "",
+      "source_line": 38,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_zero_length_strings_0016",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/node-source",
+        "/node-source"
+      ],
+      "expected": "",
+      "source_line": 39,
+      "source_column": 25
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-posix-exists.js",
+  "cases": []
+}

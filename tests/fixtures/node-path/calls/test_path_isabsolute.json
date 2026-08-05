@@ -1,0 +1,248 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-isabsolute.js",
+  "cases": [
+    {
+      "id": "test_path_isabsolute_0001",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "/"
+      ],
+      "expected": true,
+      "source_line": 6,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0002",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "//"
+      ],
+      "expected": true,
+      "source_line": 7,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0003",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "//server"
+      ],
+      "expected": true,
+      "source_line": 8,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0004",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "//server/file"
+      ],
+      "expected": true,
+      "source_line": 9,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0005",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "\\\\server\\file"
+      ],
+      "expected": true,
+      "source_line": 10,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0006",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "\\\\server"
+      ],
+      "expected": true,
+      "source_line": 11,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0007",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "\\\\"
+      ],
+      "expected": true,
+      "source_line": 12,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0008",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "c"
+      ],
+      "expected": false,
+      "source_line": 13,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0009",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "c:"
+      ],
+      "expected": false,
+      "source_line": 14,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0010",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "c:\\"
+      ],
+      "expected": true,
+      "source_line": 15,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0011",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "c:/"
+      ],
+      "expected": true,
+      "source_line": 16,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0012",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "c://"
+      ],
+      "expected": true,
+      "source_line": 17,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0013",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "C:/Users/"
+      ],
+      "expected": true,
+      "source_line": 18,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0014",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "C:\\Users\\"
+      ],
+      "expected": true,
+      "source_line": 19,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0015",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "C:cwd/another"
+      ],
+      "expected": false,
+      "source_line": 20,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0016",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "C:cwd\\another"
+      ],
+      "expected": false,
+      "source_line": 21,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0017",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "directory/directory"
+      ],
+      "expected": false,
+      "source_line": 22,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0018",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        "directory\\directory"
+      ],
+      "expected": false,
+      "source_line": 23,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0019",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        "/home/foo"
+      ],
+      "expected": true,
+      "source_line": 25,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0020",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        "/home/foo/.."
+      ],
+      "expected": true,
+      "source_line": 26,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0021",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        "bar/"
+      ],
+      "expected": false,
+      "source_line": 27,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_isabsolute_0022",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        "./baz"
+      ],
+      "expected": false,
+      "source_line": 28,
+      "source_column": 31
+    }
+  ]
+}

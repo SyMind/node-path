@@ -1,0 +1,3390 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-parse-format.js",
+  "cases": [
+    {
+      "id": "test_path_parse_format_0001",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:\\path\\dir\\index.html"
+      ],
+      "expected": {
+        "root": "C:\\",
+        "dir": "C:\\path\\dir",
+        "base": "index.html",
+        "ext": ".html",
+        "name": "index"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0002",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\",
+          "dir": "C:\\path\\dir",
+          "base": "index.html",
+          "ext": ".html",
+          "name": "index"
+        }
+      ],
+      "expected": "C:\\path\\dir\\index.html",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0003",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:\\path\\dir\\index.html"
+      ],
+      "expected": "C:\\path\\dir",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0004",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\path\\dir\\index.html"
+      ],
+      "expected": "index.html",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0005",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\path\\dir\\index.html"
+      ],
+      "expected": ".html",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0006",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:\\another_path\\DIR\\1\\2\\33\\\\index"
+      ],
+      "expected": {
+        "root": "C:\\",
+        "dir": "C:\\another_path\\DIR\\1\\2\\33\\",
+        "base": "index",
+        "ext": "",
+        "name": "index"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0007",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\",
+          "dir": "C:\\another_path\\DIR\\1\\2\\33\\",
+          "base": "index",
+          "ext": "",
+          "name": "index"
+        }
+      ],
+      "expected": "C:\\another_path\\DIR\\1\\2\\33\\\\index",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0008",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:\\another_path\\DIR\\1\\2\\33\\\\index"
+      ],
+      "expected": "C:\\another_path\\DIR\\1\\2\\33\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0009",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\another_path\\DIR\\1\\2\\33\\\\index"
+      ],
+      "expected": "index",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0010",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\another_path\\DIR\\1\\2\\33\\\\index"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0011",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "another_path\\DIR with spaces\\1\\2\\33\\index"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "another_path\\DIR with spaces\\1\\2\\33",
+        "base": "index",
+        "ext": "",
+        "name": "index"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0012",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "another_path\\DIR with spaces\\1\\2\\33",
+          "base": "index",
+          "ext": "",
+          "name": "index"
+        }
+      ],
+      "expected": "another_path\\DIR with spaces\\1\\2\\33\\index",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0013",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "another_path\\DIR with spaces\\1\\2\\33\\index"
+      ],
+      "expected": "another_path\\DIR with spaces\\1\\2\\33",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0014",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "another_path\\DIR with spaces\\1\\2\\33\\index"
+      ],
+      "expected": "index",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0015",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "another_path\\DIR with spaces\\1\\2\\33\\index"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0016",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\"
+      ],
+      "expected": {
+        "root": "\\",
+        "dir": "\\",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0017",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\",
+          "dir": "\\",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "\\",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0018",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\"
+      ],
+      "expected": "\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0019",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\"
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0020",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0021",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\foo\\C:"
+      ],
+      "expected": {
+        "root": "\\",
+        "dir": "\\foo",
+        "base": "C:",
+        "ext": "",
+        "name": "C:"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0022",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\",
+          "dir": "\\foo",
+          "base": "C:",
+          "ext": "",
+          "name": "C:"
+        }
+      ],
+      "expected": "\\foo\\C:",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0023",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo\\C:"
+      ],
+      "expected": "\\foo",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0024",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\foo\\C:"
+      ],
+      "expected": "C:",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0025",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\foo\\C:"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0026",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "file"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "file",
+        "ext": "",
+        "name": "file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0027",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "file",
+          "ext": "",
+          "name": "file"
+        }
+      ],
+      "expected": "file",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0028",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "file"
+      ],
+      "expected": "file",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0029",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0030",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "file:stream",
+        "ext": "",
+        "name": "file:stream"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0031",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "file:stream",
+          "ext": "",
+          "name": "file:stream"
+        }
+      ],
+      "expected": "file:stream",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0032",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": "file:stream",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0033",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0034",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": {
+        "root": "",
+        "dir": ".",
+        "base": "file",
+        "ext": "",
+        "name": "file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0035",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": ".",
+          "base": "file",
+          "ext": "",
+          "name": "file"
+        }
+      ],
+      "expected": ".\\file",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0036",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": ".",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0037",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": "file",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0038",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0039",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:"
+      ],
+      "expected": {
+        "root": "C:",
+        "dir": "C:",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0040",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:",
+          "dir": "C:",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "C:",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0041",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "C:",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0042",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0043",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0044",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:."
+      ],
+      "expected": {
+        "root": "C:",
+        "dir": "C:",
+        "base": ".",
+        "ext": "",
+        "name": "."
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0045",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:",
+          "dir": "C:",
+          "base": ".",
+          "ext": "",
+          "name": "."
+        }
+      ],
+      "expected": "C:.",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0046",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:."
+      ],
+      "expected": "C:",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0047",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:."
+      ],
+      "expected": ".",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0048",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:."
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0049",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:.."
+      ],
+      "expected": {
+        "root": "C:",
+        "dir": "C:",
+        "base": "..",
+        "ext": "",
+        "name": ".."
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0050",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:",
+          "dir": "C:",
+          "base": "..",
+          "ext": "",
+          "name": ".."
+        }
+      ],
+      "expected": "C:..",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0051",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:.."
+      ],
+      "expected": "C:",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0052",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:.."
+      ],
+      "expected": "..",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0053",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:.."
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0054",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:abc"
+      ],
+      "expected": {
+        "root": "C:",
+        "dir": "C:",
+        "base": "abc",
+        "ext": "",
+        "name": "abc"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0055",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:",
+          "dir": "C:",
+          "base": "abc",
+          "ext": "",
+          "name": "abc"
+        }
+      ],
+      "expected": "C:abc",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0056",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:abc"
+      ],
+      "expected": "C:",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0057",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:abc"
+      ],
+      "expected": "abc",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0058",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:abc"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0059",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:\\"
+      ],
+      "expected": {
+        "root": "C:\\",
+        "dir": "C:\\",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0060",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\",
+          "dir": "C:\\",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "C:\\",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0061",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:\\"
+      ],
+      "expected": "C:\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0062",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\"
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0063",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0064",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "C:\\abc"
+      ],
+      "expected": {
+        "root": "C:\\",
+        "dir": "C:\\",
+        "base": "abc",
+        "ext": "",
+        "name": "abc"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0065",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\",
+          "dir": "C:\\",
+          "base": "abc",
+          "ext": "",
+          "name": "abc"
+        }
+      ],
+      "expected": "C:\\abc",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0066",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "C:\\abc"
+      ],
+      "expected": "C:\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0067",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "C:\\abc"
+      ],
+      "expected": "abc",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0068",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "C:\\abc"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0069",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        ""
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0070",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0071",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0072",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0073",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\server\\share\\file_path"
+      ],
+      "expected": {
+        "root": "\\\\server\\share\\",
+        "dir": "\\\\server\\share\\",
+        "base": "file_path",
+        "ext": "",
+        "name": "file_path"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0074",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\\\server\\share\\",
+          "dir": "\\\\server\\share\\",
+          "base": "file_path",
+          "ext": "",
+          "name": "file_path"
+        }
+      ],
+      "expected": "\\\\server\\share\\file_path",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0075",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\server\\share\\file_path"
+      ],
+      "expected": "\\\\server\\share\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0076",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\\\server\\share\\file_path"
+      ],
+      "expected": "file_path",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0077",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\\\server\\share\\file_path"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0078",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\server two\\shared folder\\file path.zip"
+      ],
+      "expected": {
+        "root": "\\\\server two\\shared folder\\",
+        "dir": "\\\\server two\\shared folder\\",
+        "base": "file path.zip",
+        "ext": ".zip",
+        "name": "file path"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0079",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\\\server two\\shared folder\\",
+          "dir": "\\\\server two\\shared folder\\",
+          "base": "file path.zip",
+          "ext": ".zip",
+          "name": "file path"
+        }
+      ],
+      "expected": "\\\\server two\\shared folder\\file path.zip",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0080",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\server two\\shared folder\\file path.zip"
+      ],
+      "expected": "\\\\server two\\shared folder\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0081",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\\\server two\\shared folder\\file path.zip"
+      ],
+      "expected": "file path.zip",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0082",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\\\server two\\shared folder\\file path.zip"
+      ],
+      "expected": ".zip",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0083",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\teela\\admin$\\system32"
+      ],
+      "expected": {
+        "root": "\\\\teela\\admin$\\",
+        "dir": "\\\\teela\\admin$\\",
+        "base": "system32",
+        "ext": "",
+        "name": "system32"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0084",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\\\teela\\admin$\\",
+          "dir": "\\\\teela\\admin$\\",
+          "base": "system32",
+          "ext": "",
+          "name": "system32"
+        }
+      ],
+      "expected": "\\\\teela\\admin$\\system32",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0085",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\teela\\admin$\\system32"
+      ],
+      "expected": "\\\\teela\\admin$\\",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0086",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\\\teela\\admin$\\system32"
+      ],
+      "expected": "system32",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0087",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\\\teela\\admin$\\system32"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0088",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\?\\UNC\\server\\share"
+      ],
+      "expected": {
+        "root": "\\\\?\\UNC\\",
+        "dir": "\\\\?\\UNC\\server",
+        "base": "share",
+        "ext": "",
+        "name": "share"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0089",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "\\\\?\\UNC\\",
+          "dir": "\\\\?\\UNC\\server",
+          "base": "share",
+          "ext": "",
+          "name": "share"
+        }
+      ],
+      "expected": "\\\\?\\UNC\\server\\share",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0090",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\?\\UNC\\server\\share"
+      ],
+      "expected": "\\\\?\\UNC\\server",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0091",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "\\\\?\\UNC\\server\\share"
+      ],
+      "expected": "share",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0092",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        "\\\\?\\UNC\\server\\share"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0093",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/home/user/dir/file.txt"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/home/user/dir",
+        "base": "file.txt",
+        "ext": ".txt",
+        "name": "file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0094",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/home/user/dir",
+          "base": "file.txt",
+          "ext": ".txt",
+          "name": "file"
+        }
+      ],
+      "expected": "/home/user/dir/file.txt",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0095",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/home/user/dir/file.txt"
+      ],
+      "expected": "/home/user/dir",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0096",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/home/user/dir/file.txt"
+      ],
+      "expected": "file.txt",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0097",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/home/user/dir/file.txt"
+      ],
+      "expected": ".txt",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0098",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/home/user/a dir/another File.zip"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/home/user/a dir",
+        "base": "another File.zip",
+        "ext": ".zip",
+        "name": "another File"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0099",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/home/user/a dir",
+          "base": "another File.zip",
+          "ext": ".zip",
+          "name": "another File"
+        }
+      ],
+      "expected": "/home/user/a dir/another File.zip",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0100",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/home/user/a dir/another File.zip"
+      ],
+      "expected": "/home/user/a dir",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0101",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/home/user/a dir/another File.zip"
+      ],
+      "expected": "another File.zip",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0102",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/home/user/a dir/another File.zip"
+      ],
+      "expected": ".zip",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0103",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/home/user/a dir//another&File."
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/home/user/a dir/",
+        "base": "another&File.",
+        "ext": ".",
+        "name": "another&File"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0104",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/home/user/a dir/",
+          "base": "another&File.",
+          "ext": ".",
+          "name": "another&File"
+        }
+      ],
+      "expected": "/home/user/a dir//another&File.",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0105",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/home/user/a dir//another&File."
+      ],
+      "expected": "/home/user/a dir/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0106",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/home/user/a dir//another&File."
+      ],
+      "expected": "another&File.",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0107",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/home/user/a dir//another&File."
+      ],
+      "expected": ".",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0108",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/home/user/a$$$dir//another File.zip"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/home/user/a$$$dir/",
+        "base": "another File.zip",
+        "ext": ".zip",
+        "name": "another File"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0109",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/home/user/a$$$dir/",
+          "base": "another File.zip",
+          "ext": ".zip",
+          "name": "another File"
+        }
+      ],
+      "expected": "/home/user/a$$$dir//another File.zip",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0110",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/home/user/a$$$dir//another File.zip"
+      ],
+      "expected": "/home/user/a$$$dir/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0111",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/home/user/a$$$dir//another File.zip"
+      ],
+      "expected": "another File.zip",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0112",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/home/user/a$$$dir//another File.zip"
+      ],
+      "expected": ".zip",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0113",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "user/dir/another File.zip"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "user/dir",
+        "base": "another File.zip",
+        "ext": ".zip",
+        "name": "another File"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0114",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "user/dir",
+          "base": "another File.zip",
+          "ext": ".zip",
+          "name": "another File"
+        }
+      ],
+      "expected": "user/dir/another File.zip",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0115",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "user/dir/another File.zip"
+      ],
+      "expected": "user/dir",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0116",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "user/dir/another File.zip"
+      ],
+      "expected": "another File.zip",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0117",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "user/dir/another File.zip"
+      ],
+      "expected": ".zip",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0118",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "file"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "file",
+        "ext": "",
+        "name": "file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0119",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "file",
+          "ext": "",
+          "name": "file"
+        }
+      ],
+      "expected": "file",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0120",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "file"
+      ],
+      "expected": "file",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0121",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "file"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0122",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": ".\\file",
+        "ext": "",
+        "name": ".\\file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0123",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": ".\\file",
+          "ext": "",
+          "name": ".\\file"
+        }
+      ],
+      "expected": ".\\file",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0124",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": ".\\file",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0125",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".\\file"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0126",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "./file"
+      ],
+      "expected": {
+        "root": "",
+        "dir": ".",
+        "base": "file",
+        "ext": "",
+        "name": "file"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0127",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": ".",
+          "base": "file",
+          "ext": "",
+          "name": "file"
+        }
+      ],
+      "expected": "./file",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0128",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "./file"
+      ],
+      "expected": ".",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0129",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "./file"
+      ],
+      "expected": "file",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0130",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "./file"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0131",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "C:\\foo"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "C:\\foo",
+        "ext": "",
+        "name": "C:\\foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0132",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "C:\\foo",
+          "ext": "",
+          "name": "C:\\foo"
+        }
+      ],
+      "expected": "C:\\foo",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0133",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "C:\\foo"
+      ],
+      "expected": "C:\\foo",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0134",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "C:\\foo"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0135",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0136",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "/",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0137",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/"
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0138",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/"
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0139",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0140",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        ""
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0141",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "",
+          "ext": "",
+          "name": ""
+        }
+      ],
+      "expected": "",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0142",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0143",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0144",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "."
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": ".",
+        "ext": "",
+        "name": "."
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0145",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": ".",
+          "ext": "",
+          "name": "."
+        }
+      ],
+      "expected": ".",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0146",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "."
+      ],
+      "expected": ".",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0147",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "."
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0148",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        ".."
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "..",
+        "ext": "",
+        "name": ".."
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0149",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "",
+          "dir": "",
+          "base": "..",
+          "ext": "",
+          "name": ".."
+        }
+      ],
+      "expected": "..",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0150",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        ".."
+      ],
+      "expected": "..",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0151",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        ".."
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0152",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "foo",
+        "ext": "",
+        "name": "foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0153",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": "foo",
+          "ext": "",
+          "name": "foo"
+        }
+      ],
+      "expected": "/foo",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0154",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/foo"
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0155",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/foo"
+      ],
+      "expected": "foo",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0156",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/foo"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0157",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo."
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "foo.",
+        "ext": ".",
+        "name": "foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0158",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": "foo.",
+          "ext": ".",
+          "name": "foo"
+        }
+      ],
+      "expected": "/foo.",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0159",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/foo."
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0160",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/foo."
+      ],
+      "expected": "foo.",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0161",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/foo."
+      ],
+      "expected": ".",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0162",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo.bar"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "foo.bar",
+        "ext": ".bar",
+        "name": "foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0163",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": "foo.bar",
+          "ext": ".bar",
+          "name": "foo"
+        }
+      ],
+      "expected": "/foo.bar",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0164",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/foo.bar"
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0165",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/foo.bar"
+      ],
+      "expected": "foo.bar",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0166",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/foo.bar"
+      ],
+      "expected": ".bar",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0167",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/."
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": ".",
+        "ext": "",
+        "name": "."
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0168",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": ".",
+          "ext": "",
+          "name": "."
+        }
+      ],
+      "expected": "/.",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0169",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/."
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0170",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/."
+      ],
+      "expected": ".",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0171",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/."
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0172",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/.foo"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": ".foo",
+        "ext": "",
+        "name": ".foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0173",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": ".foo",
+          "ext": "",
+          "name": ".foo"
+        }
+      ],
+      "expected": "/.foo",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0174",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/.foo"
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0175",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/.foo"
+      ],
+      "expected": ".foo",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0176",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/.foo"
+      ],
+      "expected": "",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0177",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/.foo.bar"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": ".foo.bar",
+        "ext": ".bar",
+        "name": ".foo"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0178",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/",
+          "base": ".foo.bar",
+          "ext": ".bar",
+          "name": ".foo"
+        }
+      ],
+      "expected": "/.foo.bar",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0179",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/.foo.bar"
+      ],
+      "expected": "/",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0180",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/.foo.bar"
+      ],
+      "expected": ".foo.bar",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0181",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/.foo.bar"
+      ],
+      "expected": ".bar",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0182",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo/bar.baz"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/foo",
+        "base": "bar.baz",
+        "ext": ".baz",
+        "name": "bar"
+      },
+      "source_line": 188,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0183",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "dir": "/foo",
+          "base": "bar.baz",
+          "ext": ".baz",
+          "name": "bar"
+        }
+      ],
+      "expected": "/foo/bar.baz",
+      "source_line": 194,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0184",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/foo/bar.baz"
+      ],
+      "expected": "/foo",
+      "source_line": 197,
+      "source_column": 54
+    },
+    {
+      "id": "test_path_parse_format_0185",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "/foo/bar.baz"
+      ],
+      "expected": "bar.baz",
+      "source_line": 198,
+      "source_column": 42
+    },
+    {
+      "id": "test_path_parse_format_0186",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        "/foo/bar.baz"
+      ],
+      "expected": ".baz",
+      "source_line": 199,
+      "source_column": 41
+    },
+    {
+      "id": "test_path_parse_format_0187",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "t"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": "t",
+        "ext": "",
+        "name": "t"
+      },
+      "source_line": 205,
+      "source_column": 33
+    },
+    {
+      "id": "test_path_parse_format_0188",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "/foo/bar"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/foo",
+        "base": "bar",
+        "ext": "",
+        "name": "bar"
+      },
+      "source_line": 205,
+      "source_column": 33
+    },
+    {
+      "id": "test_path_parse_format_0189",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0190",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0191",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0192",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (1)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0193",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0194",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received null"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0195",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        ""
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type string ('')"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0196",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (true)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0197",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type number (1)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0198",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0199",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0200",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0201",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (1)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0202",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0203",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received null"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0204",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        ""
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type string ('')"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0205",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (true)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0206",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type number (1)"
+      },
+      "source_line": 178,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0207",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "dir": "some\\dir"
+        }
+      ],
+      "expected": "some\\dir\\",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0208",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "base": "index.html"
+        }
+      ],
+      "expected": "index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0209",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\"
+        }
+      ],
+      "expected": "C:\\",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0210",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0211",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "dir": "some\\dir",
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "some\\dir\\index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0212",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "C:\\",
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "C:\\index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0213",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {}
+      ],
+      "expected": "",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0214",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received null"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0215",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received undefined"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0216",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type number (1)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0217",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (true)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0218",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (false)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0219",
+      "namespace": "win32",
+      "operation": "format",
+      "arguments": [
+        "string"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type string ('string')"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0220",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "dir": "some/dir"
+        }
+      ],
+      "expected": "some/dir/",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0221",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "base": "index.html"
+        }
+      ],
+      "expected": "index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0222",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/"
+        }
+      ],
+      "expected": "/",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0223",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0224",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "dir": "some/dir",
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "some/dir/index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0225",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "root": "/",
+          "name": "index",
+          "ext": ".html"
+        }
+      ],
+      "expected": "/index.html",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0226",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {}
+      ],
+      "expected": "",
+      "source_line": 211,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_parse_format_0227",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received null"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0228",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received undefined"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0229",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        1
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type number (1)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0230",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (true)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0231",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type boolean (false)"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0232",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        "string"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pathObject\" argument must be of type object. Received type string ('string')"
+      },
+      "source_line": 216,
+      "source_column": 12
+    },
+    {
+      "id": "test_path_parse_format_0233",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        ".\\"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": ".",
+        "ext": "",
+        "name": "."
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0234",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\"
+      ],
+      "expected": {
+        "root": "\\",
+        "dir": "\\",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0235",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "\\\\"
+      ],
+      "expected": {
+        "root": "\\",
+        "dir": "\\",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0236",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "c:\\foo\\\\\\"
+      ],
+      "expected": {
+        "root": "c:\\",
+        "dir": "c:\\",
+        "base": "foo",
+        "ext": "",
+        "name": "foo"
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0237",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        "D:\\foo\\\\\\bar.baz"
+      ],
+      "expected": {
+        "root": "D:\\",
+        "dir": "D:\\foo\\\\",
+        "base": "bar.baz",
+        "ext": ".baz",
+        "name": "bar"
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0238",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "./"
+      ],
+      "expected": {
+        "root": "",
+        "dir": "",
+        "base": ".",
+        "ext": "",
+        "name": "."
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0239",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "//"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0240",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "///"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "",
+        "ext": "",
+        "name": ""
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0241",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo///"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/",
+        "base": "foo",
+        "ext": "",
+        "name": "foo"
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0242",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        "/foo///bar.baz"
+      ],
+      "expected": {
+        "root": "/",
+        "dir": "/foo//",
+        "base": "bar.baz",
+        "ext": ".baz",
+        "name": "bar"
+      },
+      "source_line": 154,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_parse_format_0243",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "name": "x",
+          "ext": "png"
+        }
+      ],
+      "expected": "x.png",
+      "source_line": 227,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_parse_format_0244",
+      "namespace": "posix",
+      "operation": "format",
+      "arguments": [
+        {
+          "name": "x",
+          "ext": ".png"
+        }
+      ],
+      "expected": "x.png",
+      "source_line": 228,
+      "source_column": 25
+    }
+  ]
+}

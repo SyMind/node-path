@@ -1,0 +1,278 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-glob.js",
+  "cases": [
+    {
+      "id": "test_path_glob_0001",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "foo\\[bcr]ar\\baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0002",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "foo\\[!bcr]ar\\baz"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0003",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "foo\\[bc-r]ar\\baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0004",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "foo\\*\\!bar\\*\\baz"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0005",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar1\\baz",
+        "foo\\bar[0-9]\\baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0006",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar5\\baz",
+        "foo\\bar[0-9]\\baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0007",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\barx\\baz",
+        "foo\\bar[a-z]\\baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0008",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz\\boo",
+        "foo\\[bc-r]ar\\baz\\*"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0009",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "foo/**"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0010",
+      "namespace": "win32",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo\\bar\\baz",
+        "*"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0011",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "foo/[bcr]ar/baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0012",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "foo/[!bcr]ar/baz"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0013",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "foo/[bc-r]ar/baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0014",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "foo/*/!bar/*/baz"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0015",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar1/baz",
+        "foo/bar[0-9]/baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0016",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar5/baz",
+        "foo/bar[0-9]/baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0017",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/barx/baz",
+        "foo/bar[a-z]/baz"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0018",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz/boo",
+        "foo/[bc-r]ar/baz/*"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0019",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "foo/**"
+      ],
+      "expected": true,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0020",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        "*"
+      ],
+      "expected": false,
+      "source_line": 37,
+      "source_column": 35
+    },
+    {
+      "id": "test_path_glob_0021",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        123,
+        "foo/bar/baz"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (123)"
+      },
+      "source_line": 43,
+      "source_column": 26
+    },
+    {
+      "id": "test_path_glob_0022",
+      "namespace": "posix",
+      "operation": "matchesGlob",
+      "arguments": [
+        "foo/bar/baz",
+        123
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"pattern\" argument must be of type string. Received type number (123)"
+      },
+      "source_line": 44,
+      "source_column": 26
+    }
+  ]
+}

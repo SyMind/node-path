@@ -1,0 +1,510 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-relative.js",
+  "cases": [
+    {
+      "id": "test_path_relative_0001",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/blah\\blah",
+        "d:/games"
+      ],
+      "expected": "d:\\games",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0002",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/bbbb",
+        "c:/aaaa"
+      ],
+      "expected": "..",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0003",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/bbbb",
+        "c:/cccc"
+      ],
+      "expected": "..\\..\\cccc",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0004",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/bbbb",
+        "c:/aaaa/bbbb"
+      ],
+      "expected": "",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0005",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/bbbb",
+        "c:/aaaa/cccc"
+      ],
+      "expected": "..\\cccc",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0006",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/",
+        "c:/aaaa/cccc"
+      ],
+      "expected": "cccc",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0007",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/",
+        "c:\\aaaa\\bbbb"
+      ],
+      "expected": "aaaa\\bbbb",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0008",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaa/bbbb",
+        "d:\\"
+      ],
+      "expected": "d:\\",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0009",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/AaAa/bbbb",
+        "c:/aaaa/bbbb"
+      ],
+      "expected": "",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0010",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:/aaaaa/",
+        "c:/aaaa/cccc"
+      ],
+      "expected": "..\\aaaa\\cccc",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0011",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\foo\\bar\\baz\\quux",
+        "C:\\"
+      ],
+      "expected": "..\\..\\..\\..",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0012",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\foo\\test",
+        "C:\\foo\\test\\bar\\package.json"
+      ],
+      "expected": "bar\\package.json",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0013",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\foo\\bar\\baz-quux",
+        "C:\\foo\\bar\\baz"
+      ],
+      "expected": "..\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0014",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\foo\\bar\\baz",
+        "C:\\foo\\bar\\baz-quux"
+      ],
+      "expected": "..\\baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0015",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\bar",
+        "\\\\foo\\bar\\baz"
+      ],
+      "expected": "baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0016",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\bar\\baz",
+        "\\\\foo\\bar"
+      ],
+      "expected": "..",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0017",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\bar\\baz-quux",
+        "\\\\foo\\bar\\baz"
+      ],
+      "expected": "..\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0018",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\bar\\baz",
+        "\\\\foo\\bar\\baz-quux"
+      ],
+      "expected": "..\\baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0019",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\baz-quux",
+        "C:\\baz"
+      ],
+      "expected": "..\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0020",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\baz",
+        "C:\\baz-quux"
+      ],
+      "expected": "..\\baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0021",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\baz-quux",
+        "\\\\foo\\baz"
+      ],
+      "expected": "..\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0022",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\baz",
+        "\\\\foo\\baz-quux"
+      ],
+      "expected": "..\\baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0023",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "C:\\baz",
+        "\\\\foo\\bar\\baz"
+      ],
+      "expected": "\\\\foo\\bar\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0024",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "\\\\foo\\bar\\baz",
+        "C:\\baz"
+      ],
+      "expected": "C:\\baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0025",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:\\a\\İ",
+        "c:\\a\\İ\\test.txt"
+      ],
+      "expected": "test.txt",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0026",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:\\İ\\a\\İ",
+        "c:\\İ\\b\\İ\\test.txt"
+      ],
+      "expected": "..\\..\\b\\İ\\test.txt",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0027",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:\\İ\\a\\i̇",
+        "c:\\İ\\b\\İ\\test.txt"
+      ],
+      "expected": "..\\..\\b\\İ\\test.txt",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0028",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:\\i̇\\a\\İ",
+        "c:\\İ\\b\\İ\\test.txt"
+      ],
+      "expected": "..\\..\\b\\İ\\test.txt",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0029",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "c:\\ß\\a\\ß",
+        "c:\\ß\\b\\ß\\test.txt"
+      ],
+      "expected": "..\\..\\b\\ß\\test.txt",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0030",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/var/lib",
+        "/var"
+      ],
+      "expected": "..",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0031",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/var/lib",
+        "/bin"
+      ],
+      "expected": "../../bin",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0032",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/var/lib",
+        "/var/lib"
+      ],
+      "expected": "",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0033",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/var/lib",
+        "/var/apache"
+      ],
+      "expected": "../apache",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0034",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/var/",
+        "/var/lib"
+      ],
+      "expected": "lib",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0035",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/",
+        "/var/lib"
+      ],
+      "expected": "var/lib",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0036",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/foo/test",
+        "/foo/test/bar/package.json"
+      ],
+      "expected": "bar/package.json",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0037",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/Users/a/web/b/test/mails",
+        "/Users/a/web/b"
+      ],
+      "expected": "../..",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0038",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/foo/bar/baz-quux",
+        "/foo/bar/baz"
+      ],
+      "expected": "../baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0039",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/foo/bar/baz",
+        "/foo/bar/baz-quux"
+      ],
+      "expected": "../baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0040",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/baz-quux",
+        "/baz"
+      ],
+      "expected": "../baz",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0041",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/baz",
+        "/baz-quux"
+      ],
+      "expected": "../baz-quux",
+      "source_line": 63,
+      "source_column": 20
+    },
+    {
+      "id": "test_path_relative_0042",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "/page1/page2/foo",
+        "/"
+      ],
+      "expected": "../../..",
+      "source_line": 63,
+      "source_column": 20
+    }
+  ]
+}

@@ -1,0 +1,732 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-normalize.js",
+  "cases": [
+    {
+      "id": "test_path_normalize_0001",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "./fixtures///b/../b/c.js"
+      ],
+      "expected": "fixtures\\b\\c.js",
+      "source_line": 6,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0002",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "/foo/../../../bar"
+      ],
+      "expected": "\\bar",
+      "source_line": 8,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0003",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//../b"
+      ],
+      "expected": "a\\b",
+      "source_line": 9,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0004",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//./c"
+      ],
+      "expected": "a\\b\\c",
+      "source_line": 10,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0005",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//."
+      ],
+      "expected": "a\\b",
+      "source_line": 11,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0006",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "//server/share/dir/file.ext"
+      ],
+      "expected": "\\\\server\\share\\dir\\file.ext",
+      "source_line": 12,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0007",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "/a/b/c/../../../x/y/z"
+      ],
+      "expected": "\\x\\y\\z",
+      "source_line": 14,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0008",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "C:.",
+      "source_line": 15,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0009",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:..\\abc"
+      ],
+      "expected": "C:..\\abc",
+      "source_line": 16,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0010",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:..\\..\\abc\\..\\def"
+      ],
+      "expected": "C:..\\..\\def",
+      "source_line": 17,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0011",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:\\."
+      ],
+      "expected": "C:\\",
+      "source_line": 19,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0012",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": "file:stream",
+      "source_line": 20,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0013",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "bar\\foo..\\..\\"
+      ],
+      "expected": "bar\\",
+      "source_line": 21,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0014",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "bar\\foo..\\.."
+      ],
+      "expected": "bar",
+      "source_line": 22,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0015",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "bar\\foo..\\..\\baz"
+      ],
+      "expected": "bar\\baz",
+      "source_line": 23,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0016",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "bar\\foo..\\"
+      ],
+      "expected": "bar\\foo..\\",
+      "source_line": 24,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0017",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "bar\\foo.."
+      ],
+      "expected": "bar\\foo..",
+      "source_line": 25,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0018",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "..\\foo..\\..\\..\\bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 26,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0019",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "..\\...\\..\\.\\...\\..\\..\\bar"
+      ],
+      "expected": "..\\..\\bar",
+      "source_line": 28,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0020",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "../../../foo/../../../bar"
+      ],
+      "expected": "..\\..\\..\\..\\..\\bar",
+      "source_line": 30,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0021",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "../../../foo/../../../bar/../../"
+      ],
+      "expected": "..\\..\\..\\..\\..\\..\\",
+      "source_line": 32,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0022",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "../foobar/barfoo/foo/../../../bar/../../"
+      ],
+      "expected": "..\\..\\",
+      "source_line": 35,
+      "source_column": 14
+    },
+    {
+      "id": "test_path_normalize_0023",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "../.../../foobar/../../../bar/../../baz"
+      ],
+      "expected": "..\\..\\..\\..\\baz",
+      "source_line": 39,
+      "source_column": 14
+    },
+    {
+      "id": "test_path_normalize_0024",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "foo/bar\\baz"
+      ],
+      "expected": "foo\\bar\\baz",
+      "source_line": 42,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0025",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\.\\foo"
+      ],
+      "expected": "\\\\.\\foo",
+      "source_line": 43,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0026",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\.\\foo\\"
+      ],
+      "expected": "\\\\.\\foo\\",
+      "source_line": 44,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0027",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/../C:/Windows"
+      ],
+      "expected": ".\\C:\\Windows",
+      "source_line": 48,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0028",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/../C:Windows"
+      ],
+      "expected": ".\\C:Windows",
+      "source_line": 49,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0029",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "./upload/../C:/Windows"
+      ],
+      "expected": ".\\C:\\Windows",
+      "source_line": 50,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0030",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "./upload/../C:x"
+      ],
+      "expected": ".\\C:x",
+      "source_line": 51,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0031",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/../??/D:/Test"
+      ],
+      "expected": ".\\??\\D:\\Test",
+      "source_line": 52,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0032",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:/../../F:"
+      ],
+      "expected": ".\\F:",
+      "source_line": 53,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0033",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:foo/../../F:"
+      ],
+      "expected": ".\\F:",
+      "source_line": 54,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0034",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:/../../F:\\"
+      ],
+      "expected": ".\\F:\\",
+      "source_line": 55,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0035",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:foo/../../F:\\"
+      ],
+      "expected": ".\\F:\\",
+      "source_line": 56,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0036",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:/../../F:x"
+      ],
+      "expected": ".\\F:x",
+      "source_line": 57,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0037",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "test/C:foo/../../F:x"
+      ],
+      "expected": ".\\F:x",
+      "source_line": 58,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0038",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "/test/../??/D:/Test"
+      ],
+      "expected": "\\??\\D:\\Test",
+      "source_line": 59,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0039",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "/test/../?/D:/Test"
+      ],
+      "expected": "\\?\\D:\\Test",
+      "source_line": 60,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0040",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "//test/../??/D:/Test"
+      ],
+      "expected": "\\\\test\\..\\??\\D:\\Test",
+      "source_line": 61,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0041",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "//test/../?/D:/Test"
+      ],
+      "expected": "\\\\test\\..\\?\\D:\\Test",
+      "source_line": 62,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0042",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\?\\test/../?/D:/Test"
+      ],
+      "expected": "\\\\?\\?\\D:\\Test",
+      "source_line": 63,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0043",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\?\\test/../../?/D:/Test"
+      ],
+      "expected": "\\\\?\\?\\D:\\Test",
+      "source_line": 64,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0044",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\.\\test/../?/D:/Test"
+      ],
+      "expected": "\\\\.\\?\\D:\\Test",
+      "source_line": 65,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0045",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\.\\test/../../?/D:/Test"
+      ],
+      "expected": "\\\\.\\?\\D:\\Test",
+      "source_line": 66,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0046",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "//server/share/dir/../../../?/D:/file"
+      ],
+      "expected": "\\\\server\\share\\?\\D:\\file",
+      "source_line": 67,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0047",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "//server/goodshare/../badshare/file"
+      ],
+      "expected": "\\\\server\\goodshare\\badshare\\file",
+      "source_line": 69,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0048",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "./fixtures///b/../b/c.js"
+      ],
+      "expected": "fixtures/b/c.js",
+      "source_line": 72,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0049",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "/foo/../../../bar"
+      ],
+      "expected": "/bar",
+      "source_line": 74,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0050",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//../b"
+      ],
+      "expected": "a/b",
+      "source_line": 75,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0051",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//./c"
+      ],
+      "expected": "a/b/c",
+      "source_line": 76,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0052",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "a//b//."
+      ],
+      "expected": "a/b",
+      "source_line": 77,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0053",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "/a/b/c/../../../x/y/z"
+      ],
+      "expected": "/x/y/z",
+      "source_line": 78,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0054",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "///..//./foo/.//bar"
+      ],
+      "expected": "/foo/bar",
+      "source_line": 79,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0055",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "bar/foo../../"
+      ],
+      "expected": "bar/",
+      "source_line": 80,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0056",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "bar/foo../.."
+      ],
+      "expected": "bar",
+      "source_line": 81,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0057",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "bar/foo../../baz"
+      ],
+      "expected": "bar/baz",
+      "source_line": 82,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0058",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "bar/foo../"
+      ],
+      "expected": "bar/foo../",
+      "source_line": 83,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0059",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "bar/foo.."
+      ],
+      "expected": "bar/foo..",
+      "source_line": 84,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0060",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../foo../../../bar"
+      ],
+      "expected": "../../bar",
+      "source_line": 85,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0061",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../.../.././.../../../bar"
+      ],
+      "expected": "../../bar",
+      "source_line": 86,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0062",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../../../foo/../../../bar"
+      ],
+      "expected": "../../../../../bar",
+      "source_line": 88,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0063",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../../../foo/../../../bar/../../"
+      ],
+      "expected": "../../../../../../",
+      "source_line": 90,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_normalize_0064",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../foobar/barfoo/foo/../../../bar/../../"
+      ],
+      "expected": "../../",
+      "source_line": 93,
+      "source_column": 14
+    },
+    {
+      "id": "test_path_normalize_0065",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "../.../../foobar/../../../bar/../../baz"
+      ],
+      "expected": "../../../../baz",
+      "source_line": 97,
+      "source_column": 14
+    },
+    {
+      "id": "test_path_normalize_0066",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        "foo/bar\\baz"
+      ],
+      "expected": "foo/bar\\baz",
+      "source_line": 100,
+      "source_column": 31
+    }
+  ]
+}

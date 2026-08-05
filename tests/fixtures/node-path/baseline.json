@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "baseline": {
+    "repository": "https://github.com/nodejs/node",
+    "commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+    "node_version": "27.0.0-dev",
+    "implementation_path": "lib/path.js",
+    "implementation_blob": "63b037cddfb9860b2d5e9fa20375b674ba5f3768",
+    "test_glob": "test/parallel/test-path*.js",
+    "minimatch_version": "10.2.5",
+    "inventoried_at": "2026-08-04T10:49:59Z"
+  },
+  "minimatch_bundle_blob": "c30673985f9b5d99ab23f1632a6fd7263b00b41f",
+  "minimatch_package_blob": "92cf6a604773d6b0954667476214653917559ffa",
+  "node_license_blob": "2842efa1288eef1de3a6778b5dd3519bc903308d",
+  "declared_counts": {
+    "source_files": 17,
+    "assertion_sites": 301,
+    "expanded_cases": 1406
+  },
+  "source_files": [
+    { "path": "test/parallel/test-path-basename.js", "blob_oid": "b16f9e5d63a94b2e131d7f92c30d77208fc90fe1", "assertion_sites": 61, "expanded_cases": 61, "counterpart": "tests/node_path/test_path_basename.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-dirname.js", "blob_oid": "0d4a182884ad0c9a2383758301f0164fac33a354", "assertion_sites": 45, "expanded_cases": 45, "counterpart": "tests/node_path/test_path_dirname.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-extname.js", "blob_oid": "be5a6316b0c7c38fd0ce3466e981c96cdbb0f053", "assertion_sites": 17, "expanded_cases": 145, "counterpart": "tests/node_path/test_path_extname.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-glob.js", "blob_oid": "47647e12784e5adeabfe32071e7c76b05007dedc", "assertion_sites": 3, "expanded_cases": 22, "counterpart": "tests/node_path/test_path_glob.rs", "license_notice": "THIRD_PARTY_NOTICES.md" },
+    { "path": "test/parallel/test-path-isabsolute.js", "blob_oid": "66b4f1ee51103acd1132d89a9972b08f69b2140d", "assertion_sites": 22, "expanded_cases": 22, "counterpart": "tests/node_path/test_path_isabsolute.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-join.js", "blob_oid": "ec4f5fea7097a584da29ed435dde5f4157d1007b", "assertion_sites": 1, "expanded_cases": 183, "counterpart": "tests/node_path/test_path_join.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-makelong.js", "blob_oid": "4a6589cb6b1a457ad4fe0643b28dafd8ccbb7aaf", "assertion_sites": 34, "expanded_cases": 34, "counterpart": "tests/node_path/test_path_makelong.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-normalize.js", "blob_oid": "8b537676dbf45df314716ac3f56ed95584f68b26", "assertion_sites": 66, "expanded_cases": 66, "counterpart": "tests/node_path/test_path_normalize.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-parse-format.js", "blob_oid": "e834031403034c8701750e6585743636d6d18151", "assertion_sites": 18, "expanded_cases": 486, "counterpart": "tests/node_path/test_path_parse_format.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-posix-exists.js", "blob_oid": "dc12ed6daf027fbfd5a35d3a3bd3b3feaf0e14f5", "assertion_sites": 1, "expanded_cases": 1, "counterpart": "tests/node_path/test_path_posix_exists.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-posix-relative-on-windows.js", "blob_oid": "bcaaca8b18a1ef653023a25430d266513a6fa0db", "assertion_sites": 1, "expanded_cases": 1, "counterpart": "tests/node_path/test_path_posix_relative_on_windows.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-relative.js", "blob_oid": "999ef93784b523948f565ae1551d7ba87a9df422", "assertion_sites": 1, "expanded_cases": 40, "counterpart": "tests/node_path/test_path_relative.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-resolve.js", "blob_oid": "088ed4b3ff183f8c091a3717849dcbe8b0bdd991", "assertion_sites": 4, "expanded_cases": 25, "counterpart": "tests/node_path/test_path_resolve.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-win32-exists.js", "blob_oid": "c9efa74dbd7d821e8eefac723fca538b6b51b50e", "assertion_sites": 1, "expanded_cases": 1, "counterpart": "tests/node_path/test_path_win32_exists.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-win32-normalize-device-names.js", "blob_oid": "b34c9061e56539662a2f3c83daa24f42b98830aa", "assertion_sites": 3, "expanded_cases": 78, "counterpart": "tests/node_path/test_path_win32_normalize_device_names.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path-zero-length-strings.js", "blob_oid": "f6516ffff85acb69afc17157318bc733c5a128f8", "assertion_sites": 16, "expanded_cases": 16, "counterpart": "tests/node_path/test_path_zero_length_strings.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" },
+    { "path": "test/parallel/test-path.js", "blob_oid": "0cb55d42aa299920826143c8d96a1b90450eaee2", "assertion_sites": 7, "expanded_cases": 180, "counterpart": "tests/node_path/test_path.rs", "license_notice": "UPSTREAM_LICENSE_NODE.txt" }
+  ],
+  "license_notices": [
+    "LICENSE",
+    "UPSTREAM_LICENSE_NODE.txt",
+    "THIRD_PARTY_NOTICES.md"
+  ]
+}

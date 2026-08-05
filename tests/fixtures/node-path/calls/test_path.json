@@ -1,0 +1,2804 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path.js",
+  "cases": [
+    {
+      "id": "test_path_0001",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0002",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0003",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0004",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0005",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        true,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0006",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0007",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0008",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0009",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0010",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0011",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0012",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0013",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0014",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0015",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0016",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        true,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0017",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0018",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0019",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0020",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0021",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0022",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        true
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type boolean (true)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0023",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0024",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0025",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0026",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0027",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        false,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0028",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0029",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0030",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0031",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0032",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0033",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0034",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0035",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0036",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0037",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0038",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        false,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0039",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0040",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0041",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0042",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0043",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0044",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        false
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type boolean (false)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0045",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0046",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0047",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0048",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0049",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        7,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0050",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0051",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0052",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0053",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0054",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0055",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0056",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0057",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0058",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0059",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0060",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        7,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0061",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0062",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0063",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0064",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0065",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0066",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        7
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type number (7)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0067",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0068",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0069",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0070",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0071",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        null,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0072",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0073",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0074",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0075",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0076",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0077",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0078",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0079",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0080",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0081",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0082",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        null,
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0083",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0084",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0085",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0086",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0087",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0088",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        null
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received null"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0089",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0090",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0091",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0092",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0093",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        {},
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0094",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0095",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0096",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0097",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0098",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0099",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0100",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0101",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0102",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0103",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0104",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        {},
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0105",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0106",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0107",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0108",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0109",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0110",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        {}
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received an instance of Object"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0111",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0112",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0113",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0114",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0115",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        {
+          "$type": "undefined"
+        },
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0116",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0117",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0118",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0119",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0120",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0121",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0122",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0123",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0124",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0125",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        {
+          "$type": "undefined"
+        },
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0126",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0127",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0128",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0129",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0130",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        {
+          "$type": "undefined"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received undefined"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0131",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0132",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0133",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0134",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0135",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        [],
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0136",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0137",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0138",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0139",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0140",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0141",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0142",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0143",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0144",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0145",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0146",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        [],
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0147",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0148",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0149",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0150",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0151",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0152",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        []
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received an instance of Array"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0153",
+      "namespace": "posix",
+      "operation": "join",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0154",
+      "namespace": "posix",
+      "operation": "resolve",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0155",
+      "namespace": "posix",
+      "operation": "normalize",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0156",
+      "namespace": "posix",
+      "operation": "isAbsolute",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0157",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        },
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0158",
+      "namespace": "posix",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0159",
+      "namespace": "posix",
+      "operation": "parse",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0160",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0161",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0162",
+      "namespace": "posix",
+      "operation": "extname",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0163",
+      "namespace": "posix",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0164",
+      "namespace": "win32",
+      "operation": "join",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0165",
+      "namespace": "win32",
+      "operation": "resolve",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"paths[0]\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0166",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0167",
+      "namespace": "win32",
+      "operation": "isAbsolute",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0168",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        },
+        "foo"
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"from\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0169",
+      "namespace": "win32",
+      "operation": "relative",
+      "arguments": [
+        "foo",
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"to\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0170",
+      "namespace": "win32",
+      "operation": "parse",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0171",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0172",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0173",
+      "namespace": "win32",
+      "operation": "extname",
+      "arguments": [
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"path\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0174",
+      "namespace": "win32",
+      "operation": "basename",
+      "arguments": [
+        "foo",
+        {
+          "$type": "number",
+          "value": "NaN"
+        }
+      ],
+      "error": {
+        "name": "TypeError",
+        "code": "ERR_INVALID_ARG_TYPE",
+        "message": "The \"suffix\" argument must be of type string. Received type number (NaN)"
+      },
+      "source_line": 34,
+      "source_column": 8
+    },
+    {
+      "id": "test_path_0175",
+      "namespace": "win32",
+      "operation": "sep",
+      "arguments": [],
+      "expected": "\\",
+      "source_line": 60,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_0176",
+      "namespace": "posix",
+      "operation": "sep",
+      "arguments": [],
+      "expected": "/",
+      "source_line": 62,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_0177",
+      "namespace": "win32",
+      "operation": "delimiter",
+      "arguments": [],
+      "expected": ";",
+      "source_line": 66,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_0178",
+      "namespace": "posix",
+      "operation": "delimiter",
+      "arguments": [],
+      "expected": ":",
+      "source_line": 68,
+      "source_column": 31
+    }
+  ]
+}

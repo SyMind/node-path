@@ -1,0 +1,864 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-win32-normalize-device-names.js",
+  "cases": [
+    {
+      "id": "test_path_win32_normalize_device_names_0001",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\COM1:"
+      ],
+      "expected": "\\\\server\\share\\COM1:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0002",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\PRN:"
+      ],
+      "expected": "\\\\server\\share\\PRN:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0003",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\AUX:"
+      ],
+      "expected": "\\\\server\\share\\AUX:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0004",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\LPT1:"
+      ],
+      "expected": "\\\\server\\share\\LPT1:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0005",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\COM1:\\foo\\bar"
+      ],
+      "expected": "\\\\server\\share\\COM1:\\foo\\bar",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0006",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\path\\COM1:"
+      ],
+      "expected": "\\\\server\\share\\path\\COM1:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0007",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\COM1:..\\..\\..\\..\\Windows"
+      ],
+      "expected": "\\\\server\\share\\Windows",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0008",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\server\\share\\path\\to\\LPT9:..\\..\\..\\..\\..\\..\\..\\..\\..\\file.txt"
+      ],
+      "expected": "\\\\server\\share\\file.txt",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0009",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON"
+      ],
+      "expected": "CON",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0010",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "con"
+      ],
+      "expected": "con",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0011",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:"
+      ],
+      "expected": ".\\CON:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0012",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "con:"
+      ],
+      "expected": ".\\con:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0013",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:."
+      ],
+      "expected": ".\\CON:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0014",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "coN:"
+      ],
+      "expected": ".\\coN:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0015",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT9.foo"
+      ],
+      "expected": "LPT9.foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0016",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM9:"
+      ],
+      "expected": ".\\COM9:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0017",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM9."
+      ],
+      "expected": ".\\COM9.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0018",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:COM9"
+      ],
+      "expected": "C:COM9",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0019",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:\\COM9"
+      ],
+      "expected": "C:\\COM9",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0020",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:./foo"
+      ],
+      "expected": ".\\CON:foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0021",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:/foo"
+      ],
+      "expected": ".\\CON:foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0022",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:../foo"
+      ],
+      "expected": ".\\CON:..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0023",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:/../foo"
+      ],
+      "expected": ".\\CON:..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0024",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:./././foo"
+      ],
+      "expected": ".\\CON:foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0025",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:.."
+      ],
+      "expected": ".\\CON:..",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0026",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\"
+      ],
+      "expected": ".\\CON:..\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0027",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\.."
+      ],
+      "expected": ".\\CON:..\\..",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0028",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\..\\"
+      ],
+      "expected": ".\\CON:..\\..\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0029",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\..\\foo"
+      ],
+      "expected": ".\\CON:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0030",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\..\\foo\\"
+      ],
+      "expected": ".\\CON:..\\..\\foo\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0031",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\..\\foo\\bar"
+      ],
+      "expected": ".\\CON:..\\..\\foo\\bar",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0032",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:..\\..\\foo\\bar\\"
+      ],
+      "expected": ".\\CON:..\\..\\foo\\bar\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0033",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:a:b:c"
+      ],
+      "expected": ".\\COM1:a:b:c",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0034",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:a:b:c/"
+      ],
+      "expected": ".\\COM1:a:b:c\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0035",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "c:lpt1"
+      ],
+      "expected": "c:lpt1",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0036",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "c:\\lpt1"
+      ],
+      "expected": "c:\\lpt1",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0037",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:.\\..\\..\\foo"
+      ],
+      "expected": ".\\CON:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0038",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "PRN:.\\..\\bar"
+      ],
+      "expected": ".\\PRN:..\\bar",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0039",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "AUX:/../../baz"
+      ],
+      "expected": ".\\AUX:..\\..\\baz",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0040",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:"
+      ],
+      "expected": ".\\COM1:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0041",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM9:"
+      ],
+      "expected": ".\\COM9:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0042",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM¹:"
+      ],
+      "expected": ".\\COM¹:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0043",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM²:"
+      ],
+      "expected": ".\\COM²:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0044",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM³:"
+      ],
+      "expected": ".\\COM³:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0045",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:.\\..\\..\\foo"
+      ],
+      "expected": ".\\COM1:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0046",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM¹:.\\..\\..\\foo"
+      ],
+      "expected": ".\\COM¹:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0047",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT1:"
+      ],
+      "expected": ".\\LPT1:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0048",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT¹:"
+      ],
+      "expected": ".\\LPT¹:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0049",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT²:"
+      ],
+      "expected": ".\\LPT²:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0050",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT³:"
+      ],
+      "expected": ".\\LPT³:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0051",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT9:"
+      ],
+      "expected": ".\\LPT9:.",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0052",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT1:.\\..\\..\\foo"
+      ],
+      "expected": ".\\LPT1:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0053",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT¹:.\\..\\..\\foo"
+      ],
+      "expected": ".\\LPT¹:..\\..\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0054",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LpT5:/another/path"
+      ],
+      "expected": ".\\LpT5:another\\path",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0055",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:\\foo"
+      ],
+      "expected": "C:\\foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0056",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "D:bar"
+      ],
+      "expected": "D:bar",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0057",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON"
+      ],
+      "expected": "CON",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0058",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON.TXT"
+      ],
+      "expected": "CON.TXT",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0059",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM10:"
+      ],
+      "expected": ".\\COM10:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0060",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT10:"
+      ],
+      "expected": ".\\LPT10:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0061",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CONNINGTOWER:"
+      ],
+      "expected": ".\\CONNINGTOWER:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0062",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "AUXILIARYDEVICE:"
+      ],
+      "expected": ".\\AUXILIARYDEVICE:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0063",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "NULLED:"
+      ],
+      "expected": ".\\NULLED:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0064",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "PRNINTER:"
+      ],
+      "expected": ".\\PRNINTER:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0065",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:\\..\\..\\windows\\system32"
+      ],
+      "expected": ".\\CON:..\\..\\windows\\system32",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0066",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "PRN:.././../etc/passwd"
+      ],
+      "expected": ".\\PRN:..\\..\\etc\\passwd",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0067",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:\\"
+      ],
+      "expected": ".\\CON:.\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0068",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:\\foo\\bar\\"
+      ],
+      "expected": ".\\COM1:foo\\bar\\",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0069",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:.\\..\\..\\foo.js"
+      ],
+      "expected": ".\\COM1:..\\..\\foo.js",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0070",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "LPT1:.\\..\\..\\another.txt"
+      ],
+      "expected": ".\\LPT1:..\\..\\another.txt",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0071",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "\\\\?\\COM1:.\\..\\..\\foo2.js"
+      ],
+      "expected": "\\\\?\\COM1:\\foo2.js",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0072",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:\\CON"
+      ],
+      "expected": "C:\\CON",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0073",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "C:\\path\\to\\COM1:"
+      ],
+      "expected": "C:\\path\\to\\COM1:",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0074",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON::"
+      ],
+      "expected": ".\\CON::",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0075",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "COM1:::foo"
+      ],
+      "expected": ".\\COM1:::foo",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0076",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "AUX:/foo\\bar/baz"
+      ],
+      "expected": ".\\AUX:foo\\bar\\baz",
+      "source_line": 113,
+      "source_column": 29
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0077",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "CON:foo/../bar"
+      ],
+      "expected": ".\\CON:bar",
+      "source_line": 118,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_win32_normalize_device_names_0078",
+      "namespace": "win32",
+      "operation": "normalize",
+      "arguments": [
+        "c:COM1:"
+      ],
+      "expected": "c:COM1:",
+      "source_line": 121,
+      "source_column": 31
+    }
+  ]
+}

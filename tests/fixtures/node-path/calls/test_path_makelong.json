@@ -1,0 +1,386 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-makelong.js",
+  "cases": [
+    {
+      "id": "test_path_makelong_0001",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 46,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0002",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        null
+      ],
+      "expected": null,
+      "source_line": 47,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0003",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        100
+      ],
+      "expected": 100,
+      "source_line": 48,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0004",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        {
+          "$type": "path-namespace",
+          "namespace": "posix"
+        }
+      ],
+      "expected": {
+        "$type": "path-namespace",
+        "namespace": "posix"
+      },
+      "source_line": 49,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0005",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        false
+      ],
+      "expected": false,
+      "source_line": 50,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0006",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        true
+      ],
+      "expected": true,
+      "source_line": 51,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_makelong_0007",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "/foo/bar"
+      ],
+      "expected": "/foo/bar",
+      "source_line": 54,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0008",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "foo/bar"
+      ],
+      "expected": "foo/bar",
+      "source_line": 55,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0009",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        null
+      ],
+      "expected": null,
+      "source_line": 56,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0010",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        true
+      ],
+      "expected": true,
+      "source_line": 57,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0011",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        1
+      ],
+      "expected": 1,
+      "source_line": 58,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0012",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [],
+      "expected": {
+        "$type": "undefined"
+      },
+      "source_line": 59,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0013",
+      "namespace": "posix",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        {}
+      ],
+      "expected": {},
+      "source_line": 60,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0014",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "C:\\foo"
+      ],
+      "expected": "\\\\?\\C:\\foo",
+      "source_line": 76,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0015",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "C:/foo"
+      ],
+      "expected": "\\\\?\\C:\\foo",
+      "source_line": 77,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0016",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\foo\\bar"
+      ],
+      "expected": "\\\\?\\UNC\\foo\\bar\\",
+      "source_line": 78,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0017",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "//foo//bar"
+      ],
+      "expected": "\\\\?\\UNC\\foo\\bar\\",
+      "source_line": 80,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0018",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\?\\foo"
+      ],
+      "expected": "\\\\?\\foo",
+      "source_line": 82,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0019",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\?\\c:\\Windows/System"
+      ],
+      "expected": "\\\\?\\c:\\Windows\\System",
+      "source_line": 83,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0020",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        null
+      ],
+      "expected": null,
+      "source_line": 84,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0021",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        true
+      ],
+      "expected": true,
+      "source_line": 85,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0022",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        1
+      ],
+      "expected": 1,
+      "source_line": 86,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0023",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [],
+      "expected": {
+        "$type": "undefined"
+      },
+      "source_line": 87,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0024",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        {}
+      ],
+      "expected": {},
+      "source_line": 88,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_makelong_0025",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "C:\\node-source\\test\\fixtures\\a.js"
+      ],
+      "expected": "\\\\?\\C:\\node-source\\test\\fixtures\\a.js",
+      "source_line": 32,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0026",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\?\\C:\\node-source\\test\\fixtures\\a.js"
+      ],
+      "expected": "\\\\?\\C:\\node-source\\test\\fixtures\\a.js",
+      "source_line": 34,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0027",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\someserver\\someshare\\somefile"
+      ],
+      "expected": "\\\\?\\UNC\\someserver\\someshare\\somefile",
+      "source_line": 36,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0028",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\?\\UNC\\someserver\\someshare\\somefile"
+      ],
+      "expected": "\\\\?\\UNC\\someserver\\someshare\\somefile",
+      "source_line": 39,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0029",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "\\\\.\\pipe\\somepipe"
+      ],
+      "expected": "\\\\.\\pipe\\somepipe",
+      "source_line": 42,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0030",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        ""
+      ],
+      "expected": "",
+      "source_line": 64,
+      "source_column": 27
+    },
+    {
+      "id": "test_path_makelong_0031",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "foo\\bar"
+      ],
+      "expected": "\\\\?\\C:\\node-source\\foo\\bar",
+      "source_line": 65,
+      "source_column": 33
+    },
+    {
+      "id": "test_path_makelong_0032",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "foo/bar"
+      ],
+      "expected": "\\\\?\\C:\\node-source\\foo\\bar",
+      "source_line": 67,
+      "source_column": 33
+    },
+    {
+      "id": "test_path_makelong_0033",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "C:"
+      ],
+      "expected": "\\\\?\\C:\\node-source",
+      "source_line": 71,
+      "source_column": 5
+    },
+    {
+      "id": "test_path_makelong_0034",
+      "namespace": "win32",
+      "operation": "toNamespacedPath",
+      "arguments": [
+        "C"
+      ],
+      "expected": "\\\\?\\C:\\node-source\\C",
+      "source_line": 73,
+      "source_column": 33
+    }
+  ]
+}

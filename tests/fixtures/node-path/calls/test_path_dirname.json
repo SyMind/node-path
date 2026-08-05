@@ -1,0 +1,501 @@
+{
+  "baseline_commit": "3f42cfacf27e348297a52d89b4cdc48b35cb7559",
+  "source_file": "test/parallel/test-path-dirname.js",
+  "cases": [
+    {
+      "id": "test_path_dirname_0001",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/node-source/test/parallel/test-path-dirname.js"
+      ],
+      "expected": "/node-source/test/parallel",
+      "source_line": 6,
+      "source_column": 25
+    },
+    {
+      "id": "test_path_dirname_0002",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/a/b/"
+      ],
+      "expected": "/a",
+      "source_line": 9,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0003",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/a/b"
+      ],
+      "expected": "/a",
+      "source_line": 10,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0004",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/a"
+      ],
+      "expected": "/",
+      "source_line": 11,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0005",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 12,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0006",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "/"
+      ],
+      "expected": "/",
+      "source_line": 13,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0007",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "////"
+      ],
+      "expected": "/",
+      "source_line": 14,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0008",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "//a"
+      ],
+      "expected": "//",
+      "source_line": 15,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0009",
+      "namespace": "posix",
+      "operation": "dirname",
+      "arguments": [
+        "foo"
+      ],
+      "expected": ".",
+      "source_line": 16,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0010",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\"
+      ],
+      "expected": "c:\\",
+      "source_line": 18,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0011",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo"
+      ],
+      "expected": "c:\\",
+      "source_line": 19,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0012",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo\\"
+      ],
+      "expected": "c:\\",
+      "source_line": 20,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0013",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo\\bar"
+      ],
+      "expected": "c:\\foo",
+      "source_line": 21,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0014",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo\\bar\\"
+      ],
+      "expected": "c:\\foo",
+      "source_line": 22,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0015",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo\\bar\\baz"
+      ],
+      "expected": "c:\\foo\\bar",
+      "source_line": 23,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0016",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:\\foo bar\\baz"
+      ],
+      "expected": "c:\\foo bar",
+      "source_line": 24,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0017",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\"
+      ],
+      "expected": "\\",
+      "source_line": 25,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0018",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo"
+      ],
+      "expected": "\\",
+      "source_line": 26,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0019",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo\\"
+      ],
+      "expected": "\\",
+      "source_line": 27,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0020",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo\\bar"
+      ],
+      "expected": "\\foo",
+      "source_line": 28,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0021",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo\\bar\\"
+      ],
+      "expected": "\\foo",
+      "source_line": 29,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0022",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo\\bar\\baz"
+      ],
+      "expected": "\\foo\\bar",
+      "source_line": 30,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0023",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\foo bar\\baz"
+      ],
+      "expected": "\\foo bar",
+      "source_line": 31,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0024",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:"
+      ],
+      "expected": "c:",
+      "source_line": 32,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0025",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo"
+      ],
+      "expected": "c:",
+      "source_line": 33,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0026",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo\\"
+      ],
+      "expected": "c:",
+      "source_line": 34,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0027",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo\\bar"
+      ],
+      "expected": "c:foo",
+      "source_line": 35,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0028",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo\\bar\\"
+      ],
+      "expected": "c:foo",
+      "source_line": 36,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0029",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo\\bar\\baz"
+      ],
+      "expected": "c:foo\\bar",
+      "source_line": 37,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0030",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "c:foo bar\\baz"
+      ],
+      "expected": "c:foo bar",
+      "source_line": 38,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0031",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "file:stream"
+      ],
+      "expected": ".",
+      "source_line": 39,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0032",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "dir\\file:stream"
+      ],
+      "expected": "dir",
+      "source_line": 40,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0033",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share"
+      ],
+      "expected": "\\\\unc\\share",
+      "source_line": 41,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0034",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share\\foo"
+      ],
+      "expected": "\\\\unc\\share\\",
+      "source_line": 43,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0035",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share\\foo\\"
+      ],
+      "expected": "\\\\unc\\share\\",
+      "source_line": 45,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0036",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share\\foo\\bar"
+      ],
+      "expected": "\\\\unc\\share\\foo",
+      "source_line": 47,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0037",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share\\foo\\bar\\"
+      ],
+      "expected": "\\\\unc\\share\\foo",
+      "source_line": 49,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0038",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "\\\\unc\\share\\foo\\bar\\baz"
+      ],
+      "expected": "\\\\unc\\share\\foo\\bar",
+      "source_line": 51,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0039",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "/a/b/"
+      ],
+      "expected": "/a",
+      "source_line": 53,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0040",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "/a/b"
+      ],
+      "expected": "/a",
+      "source_line": 54,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0041",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "/a"
+      ],
+      "expected": "/",
+      "source_line": 55,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0042",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        ""
+      ],
+      "expected": ".",
+      "source_line": 56,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0043",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "/"
+      ],
+      "expected": "/",
+      "source_line": 57,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0044",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "////"
+      ],
+      "expected": "/",
+      "source_line": 58,
+      "source_column": 31
+    },
+    {
+      "id": "test_path_dirname_0045",
+      "namespace": "win32",
+      "operation": "dirname",
+      "arguments": [
+        "foo"
+      ],
+      "expected": ".",
+      "source_line": 59,
+      "source_column": 31
+    }
+  ]
+}
