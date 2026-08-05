@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:node-path:parity-summary:schema:1",
+  "title": "node-path parity run summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "baseline_commit",
+    "run",
+    "inventory",
+    "results",
+    "failures",
+    "missing_case_ids",
+    "orphan_local_test_ids",
+    "unapproved_boundaries",
+    "releasable"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "baseline_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40,64}$"
+    },
+    "run": {
+      "$ref": "#/$defs/run"
+    },
+    "inventory": {
+      "$ref": "#/$defs/inventory"
+    },
+    "results": {
+      "$ref": "#/$defs/results"
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/failure"
+      }
+    },
+    "missing_case_ids": {
+      "$ref": "#/$defs/string_list"
+    },
+    "orphan_local_test_ids": {
+      "$ref": "#/$defs/string_list"
+    },
+    "unapproved_boundaries": {
+      "$ref": "#/$defs/string_list"
+    },
+    "releasable": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "releasable": { "const": true } },
+        "required": ["releasable"]
+      },
+      "then": {
+        "properties": {
+          "results": {
+            "properties": {
+              "failing": { "const": 0 },
+              "pending": { "const": 0 },
+              "stale": { "const": 0 },
+              "proposed": { "const": 0 },
+              "rejected": { "const": 0 },
+              "unclassified": { "const": 0 }
+            }
+          },
+          "failures": { "maxItems": 0 },
+          "missing_case_ids": { "maxItems": 0 },
+          "orphan_local_test_ids": { "maxItems": 0 },
+          "unapproved_boundaries": { "maxItems": 0 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "non_negative": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp", "rustc", "target", "node_host"],
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rustc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "node_host": {
+          "enum": ["win32", "darwin", "other-posix"]
+        }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_files", "assertion_sites", "expanded_cases"],
+      "properties": {
+        "source_files": { "$ref": "#/$defs/non_negative" },
+        "assertion_sites": { "$ref": "#/$defs/non_negative" },
+        "expanded_cases": { "$ref": "#/$defs/non_negative" }
+      }
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ported_passing",
+        "adapted_passing",
+        "non_representable_approved",
+        "failing",
+        "pending",
+        "stale",
+        "proposed",
+        "rejected",
+        "unclassified"
+      ],
+      "properties": {
+        "ported_passing": { "$ref": "#/$defs/non_negative" },
+        "adapted_passing": { "$ref": "#/$defs/non_negative" },
+        "non_representable_approved": { "$ref": "#/$defs/non_negative" },
+        "failing": { "$ref": "#/$defs/non_negative" },
+        "pending": { "$ref": "#/$defs/non_negative" },
+        "stale": { "$ref": "#/$defs/non_negative" },
+        "proposed": { "$ref": "#/$defs/non_negative" },
+        "rejected": { "$ref": "#/$defs/non_negative" },
+        "unclassified": { "$ref": "#/$defs/non_negative" }
+      }
+    },
+    "failure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_id", "message"],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

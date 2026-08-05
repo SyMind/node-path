@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:node-path:parity-ledger:schema:1",
+  "title": "node-path parity ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "baseline",
+    "declared_counts",
+    "source_files",
+    "cases",
+    "license_notices"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "baseline": {
+      "$ref": "#/$defs/baseline"
+    },
+    "declared_counts": {
+      "$ref": "#/$defs/inventory_counts"
+    },
+    "source_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source_file"
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    },
+    "license_notices": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "git_oid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40,64}$"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit",
+        "node_version",
+        "implementation_path",
+        "implementation_blob",
+        "test_glob",
+        "minimatch_version",
+        "inventoried_at"
+      ],
+      "properties": {
+        "repository": {
+          "const": "https://github.com/nodejs/node"
+        },
+        "commit": {
+          "$ref": "#/$defs/git_oid"
+        },
+        "node_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation_path": {
+          "const": "lib/path.js"
+        },
+        "implementation_blob": {
+          "$ref": "#/$defs/git_oid"
+        },
+        "test_glob": {
+          "const": "test/parallel/test-path*.js"
+        },
+        "minimatch_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventoried_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "inventory_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_files", "assertion_sites", "expanded_cases"],
+      "properties": {
+        "source_files": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assertion_sites": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "expanded_cases": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "source_file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "blob_oid",
+        "assertion_sites",
+        "expanded_cases",
+        "counterpart",
+        "license_notice"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^test/parallel/test-path.*\\.js$"
+        },
+        "blob_oid": {
+          "$ref": "#/$defs/git_oid"
+        },
+        "assertion_sites": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expanded_cases": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "counterpart": {
+          "type": "string",
+          "pattern": "^tests/node_path/.*\\.rs$"
+        },
+        "license_notice": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "node_host": {
+      "enum": ["win32", "darwin", "other-posix"]
+    },
+    "namespace": {
+      "enum": ["posix", "win32", "host-default"]
+    },
+    "drive_cwd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["device", "cwd"],
+      "properties": {
+        "device": {
+          "type": "string",
+          "pattern": "^[A-Za-z]:$"
+        },
+        "cwd": {
+          "type": "string"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["host", "cwd", "drive_cwds"],
+      "properties": {
+        "host": {
+          "$ref": "#/$defs/node_host"
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "drive_cwds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/drive_cwd"
+          }
+        }
+      }
+    },
+    "source_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "assertion_line", "vector_line", "vector_index"],
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^test/parallel/test-path.*\\.js$"
+        },
+        "assertion_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "vector_line": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "vector_index": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approved_by", "approved_at", "rationale"],
+      "properties": {
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replacement_evidence": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source",
+        "namespace",
+        "operation",
+        "host_branch",
+        "arguments",
+        "context",
+        "expected",
+        "comparator",
+        "content_hash",
+        "disposition",
+        "verification",
+        "local_test_id",
+        "adaptation",
+        "boundary_reason",
+        "replacement_check",
+        "approval",
+        "license_notice"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^node-path@[0-9a-f]{8}/.+$"
+        },
+        "source": {
+          "$ref": "#/$defs/source_anchor"
+        },
+        "namespace": {
+          "$ref": "#/$defs/namespace"
+        },
+        "operation": {
+          "enum": [
+            "resolve",
+            "normalize",
+            "is-absolute",
+            "join",
+            "relative",
+            "to-namespaced-path",
+            "dirname",
+            "basename",
+            "extname",
+            "format",
+            "parse",
+            "matches-glob",
+            "make-long",
+            "sep",
+            "delimiter",
+            "type-boundary",
+            "module-identity"
+          ]
+        },
+        "host_branch": {
+          "oneOf": [
+            { "$ref": "#/$defs/node_host" },
+            { "type": "null" }
+          ]
+        },
+        "arguments": true,
+        "context": {
+          "oneOf": [
+            { "$ref": "#/$defs/context" },
+            { "type": "null" }
+          ]
+        },
+        "expected": true,
+        "comparator": {
+          "enum": ["exact", "case-folded", "regexp", "throws", "identity", "field-type"]
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "disposition": {
+          "enum": ["ported", "harness-adapted", "non-representable"]
+        },
+        "verification": {
+          "enum": ["pending", "passing", "failing", "proposed", "approved", "stale", "rejected"]
+        },
+        "local_test_id": {
+          "type": ["string", "null"]
+        },
+        "adaptation": {
+          "type": ["string", "null"]
+        },
+        "boundary_reason": {
+          "type": ["string", "null"]
+        },
+        "replacement_check": {
+          "type": ["string", "null"]
+        },
+        "approval": {
+          "oneOf": [
+            { "$ref": "#/$defs/approval" },
+            { "type": "null" }
+          ]
+        },
+        "license_notice": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "disposition": { "const": "ported" } },
+            "required": ["disposition"]
+          },
+          "then": {
+            "properties": {
+              "verification": { "enum": ["pending", "passing", "failing", "stale"] },
+              "local_test_id": { "type": "string", "minLength": 1 },
+              "adaptation": { "type": "null" },
+              "boundary_reason": { "type": "null" },
+              "approval": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "disposition": { "const": "harness-adapted" } },
+            "required": ["disposition"]
+          },
+          "then": {
+            "properties": {
+              "verification": { "enum": ["pending", "passing", "failing", "stale"] },
+              "local_test_id": { "type": "string", "minLength": 1 },
+              "adaptation": { "type": "string", "minLength": 1 },
+              "boundary_reason": { "type": "null" },
+              "approval": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "disposition": { "const": "non-representable" } },
+            "required": ["disposition"]
+          },
+          "then": {
+            "properties": {
+              "verification": { "enum": ["proposed", "approved", "stale", "rejected"] },
+              "boundary_reason": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "verification": { "const": "approved" } },
+            "required": ["verification"]
+          },
+          "then": {
+            "properties": {
+              "approval": { "$ref": "#/$defs/approval" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
